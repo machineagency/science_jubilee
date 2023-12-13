@@ -1,0 +1,31 @@
+:py:mod:`science_jubilee.utils`
+===============================
+
+.. py:module:: science_jubilee.utils
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.utils.getxyz
+
+
+
+.. py:function:: getxyz(location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location])
+
+   Helper function to extract the x, y, z coordinates of a location object.
+
+   :param location: The location object to extract the coordinates from. This can either be a
+       :class:`Well`, a :tuple: of x, y, z coordinates, or a :class:`Location` object
+   :type location: Union[Well, Tuple, Location]
+   :raises ValueError: If the location is not a :class:`Well`, a :class:`tuple`, or a :class:`Location` object
+   :return: The x, y, z coordinates of the location
+   :rtype: float, float, float
+
+

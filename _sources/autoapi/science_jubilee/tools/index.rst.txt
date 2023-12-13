@@ -1,0 +1,31 @@
+:py:mod:`science_jubilee.tools`
+===============================
+
+.. py:module:: science_jubilee.tools
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   piserver/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   Camera/index.rst
+   Loop/index.rst
+   PeristalticPumps/index.rst
+   Pipette/index.rst
+   PumpDispenser/index.rst
+   Syringe/index.rst
+   Tool/index.rst
+   WebCamera/index.rst
+
+

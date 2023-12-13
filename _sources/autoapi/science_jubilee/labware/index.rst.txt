@@ -1,0 +1,15 @@
+:py:mod:`science_jubilee.labware`
+=================================
+
+.. py:module:: science_jubilee.labware
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   Labware/index.rst
+
+

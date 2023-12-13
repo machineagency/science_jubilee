@@ -1,0 +1,1395 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>science_jubilee.labware.Labware &#8212; science_jubilee 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/science_jubilee/labware/Labware/index';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="science_jubilee.tools" href="../../tools/index.html" />
+    <link rel="prev" title="science_jubilee.labware" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">science_jubilee 0.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../getting_started/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../building/index.html">
+                        Build Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../development/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../getting_started/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../building/index.html">
+                        Build Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../development/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../decks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.decks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../decks/Deck/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.decks.Deck</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../decks/Plate/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.decks.Plate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware.Labware</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/piserver/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.piserver</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/Camera/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Camera</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/Loop/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Loop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/PeristalticPumps/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.PeristalticPumps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/Pipette/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Pipette</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/PumpDispenser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.PumpDispenser</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/Syringe/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Syringe</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/Tool/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tools/WebCamera/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.WebCamera</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Machine/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.Machine</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.utils</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware</span></code></a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><code...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-science_jubilee.labware.Labware">
+<span id="science-jubilee-labware-labware"></span><h1><a class="reference internal" href="#module-science_jubilee.labware.Labware" title="science_jubilee.labware.Labware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware.Labware</span></code></a><a class="headerlink" href="#module-science_jubilee.labware.Labware" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Well</span></code></a></p></td>
+<td><p>A class representing a well of a labware.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.WellSet" title="science_jubilee.labware.Labware.WellSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WellSet</span></code></a></p></td>
+<td><p>A class defining a set of wells expressed as a dictionary in which each keys is the</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Row</span></code></a></p></td>
+<td><p>A class representing a row of a labware, for example 'A', 'B', etc</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.Column" title="science_jubilee.labware.Labware.Column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Column</span></code></a></p></td>
+<td><p>A class representing a column of a labware, for example 1, 2, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Labware</span></code></a></p></td>
+<td><p>A class representing a basic laboratory labware made up of a set of wells/pipette tips.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Point</span></code></a></p></td>
+<td><p>A point in the Jubilee 3D coordinate system.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Location</span></code></a></p></td>
+<td><p>A location to target as a motion.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">Well</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Well" title="Link to this definition">#</a></dt>
+<dd><p>A class representing a well of a labware.</p>
+<p>Each Well is associated with a specific name, depth, total liquid volume, shape, diameter,
+x, y, and z dimension, y-dimension, as well as its coordinates and any applied offset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object with various information about the geometry of the well and its position in the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a></p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.x">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.x" title="Link to this definition">#</a></dt>
+<dd><p>Offsets the x-position of the each well with respect to the deck-slot coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The x-coordinate of the well</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.y">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.y" title="Link to this definition">#</a></dt>
+<dd><p>Offsets the y-position of the each well with respect to the deck-slot coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The y-coordinate of the well</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.z">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">z</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.z" title="Link to this definition">#</a></dt>
+<dd><p>Offsets the z-position of each well with respect to the deck-slot coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The z-coordinate of the well</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.top_">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">top_</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.top_" title="Link to this definition">#</a></dt>
+<dd><p>Defines the top-most point of the well</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The z-coordinate of the top of the well</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.bottom_">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">bottom_</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.bottom_" title="Link to this definition">#</a></dt>
+<dd><p>Defines the bottom-most point of the well</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The z-coordinate of the bottom of the well</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.name" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.depth">
+<span class="sig-name descname"><span class="pre">depth</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.depth" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.totalLiquidVolume">
+<span class="sig-name descname"><span class="pre">totalLiquidVolume</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.totalLiquidVolume" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.shape">
+<span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.shape" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.diameter">
+<span class="sig-name descname"><span class="pre">diameter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.diameter" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.xDimension">
+<span class="sig-name descname"><span class="pre">xDimension</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.xDimension" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.yDimension">
+<span class="sig-name descname"><span class="pre">yDimension</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.yDimension" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#id0" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#id1" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#id2" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.offset">
+<span class="sig-name descname"><span class="pre">offset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Well.offset" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.bottom">
+<span class="sig-name descname"><span class="pre">bottom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.bottom" title="Link to this definition">#</a></dt>
+<dd><p>Allows the user to dinamically indicate a new Z location relative to the
+bottom of the well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<em>float</em>) – the distance in mm to offset the coordinates from the bottom of the well. Should be +</p></li>
+<li><p><strong>check</strong> (<em>bool</em><em>, </em><em>optional</em>) – the ‘z’ parameters can either be + or -. If negative, an assert error is raised to
+avoid collision with the labware. However, there might be instances of custom labware where the bottom of the well
+is purposely set as higher during the generation of its config .json file., defaults to False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> which contains information about the new coordinates generated and the
+<a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Well.top">
+<span class="sig-name descname"><span class="pre">top</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Well.top" title="Link to this definition">#</a></dt>
+<dd><p>Allows the user to dinamically indicate a new Z location relative to the
+top of the well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>z</strong> (<em>float</em>) – the distance in mm to offset the coordinates from the top of the well.Can be either + or -</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> which contains information about the new coordinates generated and the
+<a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.WellSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">WellSet</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.WellSet" title="Link to this definition">#</a></dt>
+<dd><p>A class defining a set of wells expressed as a dictionary in which each keys is the
+the <a href="#id3"><span class="problematic" id="id4">:attribute:`Well.name`</span></a> object and the value is the <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object itself.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.WellSet.wells">
+<span class="sig-name descname"><span class="pre">wells</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><span class="pre">Well</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#science_jubilee.labware.Labware.WellSet.wells" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.WellSet.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.WellSet.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Displays the wellset as a :list: of wells and the deck-slot nunmber</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A :list: of <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects diplayed by their <a href="#id5"><span class="problematic" id="id6">:attribute:`Well.name`</span></a></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.WellSet.__getitem__">
+<span class="sig-name descname"><span class="pre">__getitem__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.WellSet.__getitem__" title="Link to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>Allows the user to select a <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object by either their <a href="#id7"><span class="problematic" id="id8">:attribute:`Well.name`</span></a> or</dt><dd><p>their index in a :list:</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – The <a href="#id9"><span class="problematic" id="id10">:attribute:`Well.name`</span></a> or index representing a <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> in the labware</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Row">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">Row</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Row" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#science_jubilee.labware.Labware.WellSet" title="science_jubilee.labware.Labware.WellSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WellSet</span></code></a></p>
+<p>A class representing a row of a labware, for example ‘A’, ‘B’, etc</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>WellSet</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><em>Well</em></a><em>]</em>) – A dictionary of <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects in which each keys is the the <a href="#id11"><span class="problematic" id="id12">:attribute:`Well.name`</span></a> object and the value is the <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object itself.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Row.identifier">
+<span class="sig-name descname"><span class="pre">identifier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Row.identifier" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Column">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">Column</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Column" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#science_jubilee.labware.Labware.WellSet" title="science_jubilee.labware.Labware.WellSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WellSet</span></code></a></p>
+<p>A class representing a column of a labware, for example 1, 2, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>WellSet</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><em>Well</em></a><em>]</em>) – A dictionary of <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects in which each keys is the the <a href="#id13"><span class="problematic" id="id14">:attribute:`Well.name`</span></a> object and the value is the <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object itself.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Column.identifier">
+<span class="sig-name descname"><span class="pre">identifier</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Column.identifier" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">Labware</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labware_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'rows'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">os.path.join(os.path.dirname(__file__),</span> <span class="pre">'labware_definition')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#science_jubilee.labware.Labware.WellSet" title="science_jubilee.labware.Labware.WellSet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">WellSet</span></code></a></p>
+<p>A class representing a basic laboratory labware made up of a set of wells/pipette tips.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>labware_filename</strong> (<em>str</em>) – The name of the config <cite>.json</cite></p></li>
+<li><p><strong>offset</strong> (<em>Tuple</em><em>[</em><em>float</em><em>]</em><em>, </em><em>optional</em>) – Coordinates to use to offset all the wells in a labware for easier handling of coordinates.
+For example this is called by the <a href="#id15"><span class="problematic" id="id16">:method:`Deck.load_labware`</span></a> when assignign a labware to a deck slot, defaults to None</p></li>
+<li><p><strong>order</strong> (<em>str</em><em>, </em><em>optional</em>) – Option to order the wells of a labware either by <cite>row</cite> or <cite>columns</cite>, defaults to ‘rows’</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the folder containing the configuration <cite>.json</cite> files for the labware,
+defaults to the ‘labware_definition/’ in the science_jubilee/labware directory.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.shape">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.shape" title="Link to this definition">#</a></dt>
+<dd><p>Returns the shape of the labware as a tuple of (rows, columns)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of (rows, columns)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.ordering">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.ordering" title="Link to this definition">#</a></dt>
+<dd><p>Returns the ordering of the wells in the labware as a list of lists. Each list represents a row of the labware.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of lists of <a class="reference internal" href="#science_jubilee.labware.Labware.Well.name" title="science_jubilee.labware.Labware.Well.name"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well.name</span></code></a> objects</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[List[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.brand">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">brand</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.brand" title="Link to this definition">#</a></dt>
+<dd><p>Returns the brand of the labware as a strin</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string with the brand of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.display_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">display_name</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.display_name" title="Link to this definition">#</a></dt>
+<dd><p>Returns the display name of the labware as a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string with the display name of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.labware_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">labware_type</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.labware_type" title="Link to this definition">#</a></dt>
+<dd><p>Returns the type of labware as a string</p>
+<p>The type fo labware will generally either be a tiprack, wellplate, reservoir, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string with the type of labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.volume_units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">volume_units</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.volume_units" title="Link to this definition">#</a></dt>
+<dd><p>Returns the units of volume of the labware as a string</p>
+<p>The volume units will be either uL or mL.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string with the units of volume of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.dimensions">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dimensions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.dimensions" title="Link to this definition">#</a></dt>
+<dd><p>Returns the dimensions of the labware as a dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary with the x,y, and z dimensions of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.is_tip_rack">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_tip_rack</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.is_tip_rack" title="Link to this definition">#</a></dt>
+<dd><p>Returns a boolean indicating if the labware is a tiprack</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the labware is a tiprack, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.load_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_name</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.load_name" title="Link to this definition">#</a></dt>
+<dd><p>Returns the name of the labware as a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string with the name of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.tip_length">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tip_length</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.tip_length" title="Link to this definition">#</a></dt>
+<dd><p>Returns the length of the tip of the labware as a float if the labware is a tiprack, otherwise returns None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A float with the length of the tip of the labware or None otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.tip_overlap">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tip_overlap</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.tip_overlap" title="Link to this definition">#</a></dt>
+<dd><p>Returns the overlap of the tip of the labware as a float if the labware is a tiprack, otherwise returns None</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A float with the overlap of the tip of the labware or None otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.offset">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">offset</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.offset" title="Link to this definition">#</a></dt>
+<dd><p>Returns the offset of the labware as a tuple of floats</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of floats with the offset of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Displayed representation of a <a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware"><code class="xref py py-class docutils literal notranslate"><span class="pre">Labware</span></code></a> object indicating the type of labware and
+its name. Additionally, it will show the <a href="#id17"><span class="problematic" id="id18">:attribute:`Deck.slots`</span></a> number if the labware has been
+already assigned to it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware._create_rows_and_columns">
+<span class="sig-name descname"><span class="pre">_create_rows_and_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware._create_rows_and_columns" title="Link to this definition">#</a></dt>
+<dd><p>Creates a dictionary of <a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></a> and <a class="reference internal" href="#science_jubilee.labware.Labware.Column" title="science_jubilee.labware.Labware.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a> and <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects from the data in the config <cite>.json</cite> file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary of <a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></a> and <a class="reference internal" href="#science_jubilee.labware.Labware.Column" title="science_jubilee.labware.Labware.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a> and <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></a>, <a class="reference internal" href="#science_jubilee.labware.Labware.Column" title="science_jubilee.labware.Labware.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a>, <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.get_row">
+<span class="sig-name descname"><span class="pre">get_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><span class="pre">Row</span></a></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.get_row" title="Link to this definition">#</a></dt>
+<dd><p>Fucntions to fetch the <a class="reference internal" href="#science_jubilee.labware.Labware.Well.name" title="science_jubilee.labware.Labware.Well.name"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well.name</span></code></a> of the indicated row.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>row_id</strong> (<em>str</em>) – The name of a row of the labware, usually indicated by a capital letter (e.g., A, B, etc.)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects diplayed by their <a href="#id19"><span class="problematic" id="id20">:attribute:`Well.name`</span></a></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Row" title="science_jubilee.labware.Labware.Row"><code class="xref py py-class docutils literal notranslate"><span class="pre">Row</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.get_column">
+<span class="sig-name descname"><span class="pre">get_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">col_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#science_jubilee.labware.Labware.Column" title="science_jubilee.labware.Labware.Column"><span class="pre">Column</span></a></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.get_column" title="Link to this definition">#</a></dt>
+<dd><p>Fucntions to fetch the <a class="reference internal" href="#science_jubilee.labware.Labware.Well.name" title="science_jubilee.labware.Labware.Well.name"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well.name</span></code></a> of the indicated column.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>col_id</strong> (<em>str</em>) – The name of a column of the labware, usually indicated by an integer number (e.g., 1, 2, etc.)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects diplayed by their <a href="#id21"><span class="problematic" id="id22">:attribute:`Well.name`</span></a></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Column" title="science_jubilee.labware.Labware.Column"><code class="xref py py-class docutils literal notranslate"><span class="pre">Column</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.metadata">
+<span class="sig-name descname"><span class="pre">metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.metadata" title="Link to this definition">#</a></dt>
+<dd><p>Returns the metadata of the labware as a dictionary</p>
+<p>The metadata of a labware will generally contain the display name, the type of labware, and the units of volume.
+These can also be found as attributes of the <a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware"><code class="xref py py-class docutils literal notranslate"><span class="pre">Labware</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary with the metadata of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.parameters">
+<span class="sig-name descname"><span class="pre">parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.parameters" title="Link to this definition">#</a></dt>
+<dd><p>Returns the parameters describing certain features of the labware as a dictionary</p>
+<p>The parameters genereally include whether the shape of the labware is regular or irregular, if it is a tiprack,
+and other Opentrons specific parameters as we are using their ‘Custom Labware Page’ to generate the .json config files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary with the parameters of the labware</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.add_slot">
+<span class="sig-name descname"><span class="pre">add_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot_</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.add_slot" title="Link to this definition">#</a></dt>
+<dd><p>Add name of deck slot after labware has been loaded</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>slot</strong> (<em>str</em>) – The name of the deck slot</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Labware.withWellOrder">
+<span class="sig-name descname"><span class="pre">withWellOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Labware.withWellOrder" title="Link to this definition">#</a></dt>
+<dd><p>Reorders the wells by rows or by columns. Automatically updates the <a href="#id23"><span class="problematic" id="id24">:attribute:`Labware.wells`</span></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>order</strong> (<em>str</em>) – The order in which to reorder the wells. Can be either ‘rows’ or ‘columns’</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> objects diplayed by their <a href="#id25"><span class="problematic" id="id26">:attribute:`Well.name`</span></a></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">Point</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Point" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>A point in the Jubilee 3D coordinate system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>NamedTuple</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code>) – A list-like container with a fixed number of elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple of coordinates (x,y,z)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.x">
+<span class="sig-name descname"><span class="pre">x</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Point.x" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.y">
+<span class="sig-name descname"><span class="pre">y</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Point.y" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.z">
+<span class="sig-name descname"><span class="pre">z</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#science_jubilee.labware.Labware.Point.z" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Point.add" title="Link to this definition">#</a></dt>
+<dd><p>Adds the coordinates of two points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>) – A tuple of coordinates (x,y,z)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.substract">
+<span class="sig-name descname"><span class="pre">substract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Point.substract" title="Link to this definition">#</a></dt>
+<dd><p>Substracts the coordinates of two points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a>) – A tuple of coordinates (x,y,z)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.multiply">
+<span class="sig-name descname"><span class="pre">multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Point.multiply" title="Link to this definition">#</a></dt>
+<dd><p>Multiplies the coordinates of a point by a scalar</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em>) – A scalar to multiply the coordinates of a point</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new <a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> object scaled by the value indicated as the function parameter</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.absolute">
+<span class="sig-name descname"><span class="pre">absolute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Point.absolute" title="Link to this definition">#</a></dt>
+<dd><p>Returns the absolute value of the coordinates of a point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The absolute values of a <a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Point.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Point.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Returns a string representation of the coordinates of a point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string representation of the coordinates of a point</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Location">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.labware.Labware.</span></span><span class="sig-name descname"><span class="pre">Location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><span class="pre">Point</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">labware</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><span class="pre">Well</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware"><span class="pre">Labware</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.labware.Labware.Location" title="Link to this definition">#</a></dt>
+<dd><p>A location to target as a motion.</p>
+<p>The location contains a <a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a> and possibly an associated
+<a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware"><code class="xref py py-class docutils literal notranslate"><span class="pre">Labware</span></code></a> or <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> instance.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Location.point">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">point</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><span class="pre">Point</span></a></em><a class="headerlink" href="#science_jubilee.labware.Labware.Location.point" title="Link to this definition">#</a></dt>
+<dd><p>The coordinates (x,y,z) of a Well or a Labware</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple of coordinates (x,y,z)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><code class="xref py py-class docutils literal notranslate"><span class="pre">Point</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Location.labware">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">labware</span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Location.labware" title="Link to this definition">#</a></dt>
+<dd><p>The <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object associated with the coordinates (x,y,z)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a> object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><code class="xref py py-class docutils literal notranslate"><span class="pre">Well</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Location.__iter__">
+<span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point"><span class="pre">Point</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><span class="pre">Well</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware"><span class="pre">Labware</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Location.__iter__" title="Link to this definition">#</a></dt>
+<dd><p>Iterable interface to support unpacking of <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An interable of <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> objects</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Iterable[Union[<a class="reference internal" href="#science_jubilee.labware.Labware.Point" title="science_jubilee.labware.Labware.Point">Point</a>, <a class="reference internal" href="#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well">Well</a>, <a class="reference internal" href="#science_jubilee.labware.Labware.Labware" title="science_jubilee.labware.Labware.Labware">Labware</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Location.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Location.__eq__" title="Link to this definition">#</a></dt>
+<dd><p>Comparison between two <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>other</strong> (<a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a>) – A <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> object</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the two <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> objects are equal, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.labware.Labware.Location.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#science_jubilee.labware.Labware.Location.__repr__" title="Link to this definition">#</a></dt>
+<dd><p>Returns a string representation of the <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string representation of the <a class="reference internal" href="#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><code class="xref py py-class docutils literal notranslate"><span class="pre">Location</span></code></a> object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../tools/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well"><code class="docutils literal notranslate"><span class="pre">Well</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.x"><code class="docutils literal notranslate"><span class="pre">Well.x</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.y"><code class="docutils literal notranslate"><span class="pre">Well.y</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.z"><code class="docutils literal notranslate"><span class="pre">Well.z</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.top_"><code class="docutils literal notranslate"><span class="pre">Well.top_</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.bottom_"><code class="docutils literal notranslate"><span class="pre">Well.bottom_</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.name"><code class="docutils literal notranslate"><span class="pre">Well.name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.depth"><code class="docutils literal notranslate"><span class="pre">Well.depth</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.totalLiquidVolume"><code class="docutils literal notranslate"><span class="pre">Well.totalLiquidVolume</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.shape"><code class="docutils literal notranslate"><span class="pre">Well.shape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.diameter"><code class="docutils literal notranslate"><span class="pre">Well.diameter</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.xDimension"><code class="docutils literal notranslate"><span class="pre">Well.xDimension</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.yDimension"><code class="docutils literal notranslate"><span class="pre">Well.yDimension</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id0"><code class="docutils literal notranslate"><span class="pre">Well.x</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">Well.y</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">Well.z</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.offset"><code class="docutils literal notranslate"><span class="pre">Well.offset</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.bottom"><code class="docutils literal notranslate"><span class="pre">Well.bottom()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Well.top"><code class="docutils literal notranslate"><span class="pre">Well.top()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.WellSet"><code class="docutils literal notranslate"><span class="pre">WellSet</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.WellSet.wells"><code class="docutils literal notranslate"><span class="pre">WellSet.wells</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.WellSet.__repr__"><code class="docutils literal notranslate"><span class="pre">WellSet.__repr__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.WellSet.__getitem__"><code class="docutils literal notranslate"><span class="pre">WellSet.__getitem__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Row"><code class="docutils literal notranslate"><span class="pre">Row</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Row.identifier"><code class="docutils literal notranslate"><span class="pre">Row.identifier</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Column"><code class="docutils literal notranslate"><span class="pre">Column</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Column.identifier"><code class="docutils literal notranslate"><span class="pre">Column.identifier</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware"><code class="docutils literal notranslate"><span class="pre">Labware</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.shape"><code class="docutils literal notranslate"><span class="pre">Labware.shape</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.ordering"><code class="docutils literal notranslate"><span class="pre">Labware.ordering</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.brand"><code class="docutils literal notranslate"><span class="pre">Labware.brand</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.display_name"><code class="docutils literal notranslate"><span class="pre">Labware.display_name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.labware_type"><code class="docutils literal notranslate"><span class="pre">Labware.labware_type</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.volume_units"><code class="docutils literal notranslate"><span class="pre">Labware.volume_units</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.dimensions"><code class="docutils literal notranslate"><span class="pre">Labware.dimensions</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.is_tip_rack"><code class="docutils literal notranslate"><span class="pre">Labware.is_tip_rack</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.load_name"><code class="docutils literal notranslate"><span class="pre">Labware.load_name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.tip_length"><code class="docutils literal notranslate"><span class="pre">Labware.tip_length</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.tip_overlap"><code class="docutils literal notranslate"><span class="pre">Labware.tip_overlap</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.offset"><code class="docutils literal notranslate"><span class="pre">Labware.offset</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.__repr__"><code class="docutils literal notranslate"><span class="pre">Labware.__repr__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware._create_rows_and_columns"><code class="docutils literal notranslate"><span class="pre">Labware._create_rows_and_columns()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.get_row"><code class="docutils literal notranslate"><span class="pre">Labware.get_row()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.get_column"><code class="docutils literal notranslate"><span class="pre">Labware.get_column()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.metadata"><code class="docutils literal notranslate"><span class="pre">Labware.metadata()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.parameters"><code class="docutils literal notranslate"><span class="pre">Labware.parameters()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.add_slot"><code class="docutils literal notranslate"><span class="pre">Labware.add_slot()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Labware.withWellOrder"><code class="docutils literal notranslate"><span class="pre">Labware.withWellOrder()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.x"><code class="docutils literal notranslate"><span class="pre">Point.x</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.y"><code class="docutils literal notranslate"><span class="pre">Point.y</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.z"><code class="docutils literal notranslate"><span class="pre">Point.z</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.add"><code class="docutils literal notranslate"><span class="pre">Point.add()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.substract"><code class="docutils literal notranslate"><span class="pre">Point.substract()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.multiply"><code class="docutils literal notranslate"><span class="pre">Point.multiply()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.absolute"><code class="docutils literal notranslate"><span class="pre">Point.absolute()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Point.__repr__"><code class="docutils literal notranslate"><span class="pre">Point.__repr__()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Location"><code class="docutils literal notranslate"><span class="pre">Location</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Location.point"><code class="docutils literal notranslate"><span class="pre">Location.point</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Location.labware"><code class="docutils literal notranslate"><span class="pre">Location.labware</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Location.__iter__"><code class="docutils literal notranslate"><span class="pre">Location.__iter__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Location.__eq__"><code class="docutils literal notranslate"><span class="pre">Location.__eq__()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.labware.Labware.Location.__repr__"><code class="docutils literal notranslate"><span class="pre">Location.__repr__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../../_sources/autoapi/science_jubilee/labware/Labware/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, Machine Agency.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

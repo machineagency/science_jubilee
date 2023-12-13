@@ -1,0 +1,16 @@
+:py:mod:`science_jubilee.decks`
+===============================
+
+.. py:module:: science_jubilee.decks
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   Deck/index.rst
+   Plate/index.rst
+
+

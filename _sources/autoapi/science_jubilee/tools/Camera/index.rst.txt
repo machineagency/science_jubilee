@@ -1,0 +1,139 @@
+:py:mod:`science_jubilee.tools.Camera`
+======================================
+
+.. py:module:: science_jubilee.tools.Camera
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Camera.Camera
+
+
+
+
+.. py:class:: Camera(index, name)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   A class representation of a Raspberry Pi camera.
+
+   :param Tool: The base tool class
+   :type Tool: class:`Tool`
+
+   .. py:method:: load_coefficients(path)
+
+      Loads camera matrix and distortion coefficients.
+
+      :param path: Path to your camera calibration file
+      :type path: str
+      :return: A list containing your camera matrix (index 0) and distortion matrix (index 1)
+      :rtype: list
+
+
+   .. py:method:: get_camera_indices()
+
+      Returns valid camera indices for use with OpenCV
+
+      :return: A list of valid camera indices
+      :rtype: list
+
+
+   .. py:method:: get_frame(resolution=[1200, 1200], uvc=False)
+
+      Take a picture and return the image. Compensates for lens distortion using camera calibration file.
+
+      :param resolution: Camera resolution, defaults to [1200, 1200]
+      :type resolution: list, optional
+      :param uvc: True if the camera is a USB video class (UVC) camera for programmatically setting focus, defaults to False
+      :type uvc: bool, optional
+      :return: The captured frame
+      :rtype: ndarray
+
+
+   .. py:method:: show_frame(frame, grid=False, save=False, save_path='fig.png')
+
+      Show a captured frame using matplotlib.
+
+      :param frame: The captured frame to show
+      :type frame: ndarray
+      :param grid: Show grid lines, defaults to False
+      :type grid: bool, optional
+      :param save: Save to file, defaults to False
+      :type save: bool, optional
+      :param save_path: File path to save image, defaults to "fig.png"
+      :type save_path: str, optional
+
+
+   .. py:method:: get_show_frame()
+
+      Get and show a frame.
+
+
+
+   .. py:method:: video_stream(camera_index=0)
+
+      Start a video stream from the camera.
+
+      :param camera_index: The camera index, defaults to 0
+      :type camera_index: int, optional
+
+
+   .. py:method:: image_wells(resolution=[1200, 1200], uvc=False, wells: science_jubilee.labware.Labware.Well = None)
+
+      Move to a number of wells to take and show images.
+
+      :param resolution: Camera resolution, defaults to [1200, 1200]
+      :type resolution: list, optional
+      :param uvc: True if the camera is a USB video class (UVC) camera for programmatically setting focus, defaults to False
+      :type uvc: bool, optional
+      :param wells: A list of wells to image, defaults to None
+      :type wells: :class:`Well`, optional
+
+
+   .. py:method:: get_well_image(resolution=[1200, 1200], uvc=False, well: science_jubilee.labware.Labware.Well = None)
+
+      Move to a single well to take a picture and return the frame.
+
+      :param resolution: Camera resolution, defaults to [1200, 1200]
+      :type resolution: list, optional
+      :param uvc: True if the camera is a USB video class (UVC) camera for programmatically setting focus, defaults to False
+      :type uvc: bool, optional
+      :param well: The well to image, defaults to None
+      :type well: :class:`Well`, optional
+      :return: The captured frame
+      :rtype: ndarray
+
+
+   .. py:method:: _get_xyz(well: science_jubilee.labware.Labware.Well = None, location: Tuple[float] = None)
+      :staticmethod:
+
+      Get the (x,y,z) position of a well.
+
+      :param well: The well to fetch position of, defaults to None
+      :type well: :class:`Well`, optional
+      :param location: Directly specify an (x,y,z) location, defaults to None
+      :type location: Tuple[float], optional
+      :raises ValueError: Must specify either a well or a location
+      :return: The well location
+      :rtype: Tuple[float, float, float]
+
+
+   .. py:method:: _get_top_bottom(well: science_jubilee.labware.Labware.Well = None)
+      :staticmethod:
+
+      Get the top and bottom heights of a well.
+
+      :param well: The well to fetch position of, defaults to None
+      :type well: Well, optional
+      :return: The z-height of the top and bottom of the well
+      :rtype: Tuple[float, float]
+
+
+

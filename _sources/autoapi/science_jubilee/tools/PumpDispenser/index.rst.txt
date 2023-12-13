@@ -1,0 +1,92 @@
+:py:mod:`science_jubilee.tools.PumpDispenser`
+=============================================
+
+.. py:module:: science_jubilee.tools.PumpDispenser
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.PumpDispenser.PumpDispenser
+
+
+
+
+.. py:class:: PumpDispenser(index, name, pump_group, dispense_tip_offsets, line_volume, waste=None)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   Class to manage dispenser tool, for example for a color mixing demo
+
+   :param index: The tool index of the dispenser head on the machine
+   :type indes: int
+   :param name: The tool name
+   :type name: str
+   :param pump_group: science_jubilee.tools.PeristalticPump.PeristalticPumps object to assign to dispenser head
+   :type pump_group: science_jubilee.tools.PeristalticPump.PeristalticPumps
+   :param dispense_tip_offset: Offsets from tool reference point for every dispense tip on the tool
+   :type dispense_tip_offset: list
+   :param line_volume: Volume in mL of tubing line between pump and dispense head for 1 line
+   :type line_volume: int, float
+   :param waste: Location of waste basin
+   :type waste: class 'Well'
+
+
+   .. py:method:: from_config(index, pump_group, config_file: str, path: str = os.path.join(os.path.dirname(__file__), 'configs'))
+      :classmethod:
+
+      Initialize the pipette object from a config file
+
+      :param index: The tool index of the dispenser_head on the machine
+      :type index: int
+      :param config_file: The name of the config file containign the dispenser tool parameters
+      :type config_file: str
+      :returns: A :class:`PumpDispenser` object
+      :rtype: :class:`PumpDispenser`
+
+
+   .. py:method:: add_waste(location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location])
+
+      Specify a waste collection container to dump extra liquid into. This should be large enough to catch liquid from all dispenser tips simultaneously.
+
+      :param location: location of container
+      :type location: class 'Well'
+
+
+   .. py:method:: dispense(vol: Union[float, int, list], location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], dispense_head_index=None)
+
+      Dispense volume vol from dispense head dispense_head_index into location
+
+      :param vol: Volume to dispense, in mL. Specify a single number (float, int) and a dispense head index (int) to dispense from a single specific dispense head, the single volume with no dispense head to dispense this amount from all dispense tips, or a list of volumes to dispense unique amount from each dispense tip
+      :type vol: float, int list
+      :param location: Location to dispense
+      :type location: class 'Well'
+      :param dispense_head_index: index of dispense tip to dispense from, if passing single number for vol
+      :type dispense_head_index: int
+
+
+   .. py:method:: prime_lines(volume: Union[int, float] = None, location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location] = None)
+
+      Fill all lines with liquid from all pumps simultaneously.
+
+      :param volume: volume to prime with, if not specified in config file
+      :type volue: int, float
+      :param location: location of waste container, if not already specified
+      :type location: class 'Well'
+
+
+   .. py:method:: empty_lines(volume: Union[int, float] = None)
+
+      return line contents to stock wells.
+
+      :param volume: line volume to return, if not set in instance already
+      :type volume: int, float
+
+
+

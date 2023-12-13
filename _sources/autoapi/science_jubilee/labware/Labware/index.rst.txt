@@ -1,0 +1,530 @@
+:py:mod:`science_jubilee.labware.Labware`
+=========================================
+
+.. py:module:: science_jubilee.labware.Labware
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.labware.Labware.Well
+   science_jubilee.labware.Labware.WellSet
+   science_jubilee.labware.Labware.Row
+   science_jubilee.labware.Labware.Column
+   science_jubilee.labware.Labware.Labware
+   science_jubilee.labware.Labware.Point
+   science_jubilee.labware.Labware.Location
+
+
+
+
+.. py:class:: Well
+
+
+   A class representing a well of a labware.
+
+   Each Well is associated with a specific name, depth, total liquid volume, shape, diameter,
+   x, y, and z dimension, y-dimension, as well as its coordinates and any applied offset
+
+   :return: A :class:`Well` object with various information about the geometry of the well and its position in the labware
+   :rtype: :class:`Well`
+
+   .. py:property:: x
+
+      Offsets the x-position of the each well with respect to the deck-slot coordinates
+
+      :return: The x-coordinate of the well
+      :rtype: float
+
+   .. py:property:: y
+
+      Offsets the y-position of the each well with respect to the deck-slot coordinates
+
+      :return: The y-coordinate of the well
+      :rtype: float
+
+   .. py:property:: z
+
+      Offsets the z-position of each well with respect to the deck-slot coordinates
+
+      :return: The z-coordinate of the well
+      :rtype: float
+
+   .. py:property:: top_
+
+      Defines the top-most point of the well
+
+      :return: The z-coordinate of the top of the well
+      :rtype: float
+
+   .. py:property:: bottom_
+
+      Defines the bottom-most point of the well
+
+      :return: The z-coordinate of the bottom of the well
+      :rtype: float
+
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: depth
+      :type: float
+
+      
+
+   .. py:attribute:: totalLiquidVolume
+      :type: float
+
+      
+
+   .. py:attribute:: shape
+      :type: str
+
+      
+
+   .. py:attribute:: diameter
+      :type: float
+
+      
+
+   .. py:attribute:: xDimension
+      :type: float
+
+      
+
+   .. py:attribute:: yDimension
+      :type: float
+
+      
+
+   .. py:attribute:: x
+      :type: float
+
+      
+
+   .. py:attribute:: y
+      :type: float
+
+      
+
+   .. py:attribute:: z
+      :type: float
+
+      
+
+   .. py:attribute:: offset
+      :type: Tuple[float]
+
+      
+
+   .. py:method:: bottom(z: float, check=False)
+
+      Allows the user to dinamically indicate a new Z location relative to the
+      bottom of the well.
+
+      :param z: the distance in mm to offset the coordinates from the bottom of the well. Should be +
+      :type z: float
+      :param check: the 'z' parameters can either be + or -. If negative, an assert error is raised to
+          avoid collision with the labware. However, there might be instances of custom labware where the bottom of the well
+          is purposely set as higher during the generation of its config .json file., defaults to False
+      :type check: bool, optional
+      :return: A :class:`Location` which contains information about the new coordinates generated and the
+          :class:`Well` object
+      :rtype: :class:`Location`
+
+
+   .. py:method:: top(z: float)
+
+      Allows the user to dinamically indicate a new Z location relative to the
+      top of the well.
+
+      :param z: the distance in mm to offset the coordinates from the top of the well.Can be either + or -
+      :type z: float
+      :return: A :class:`Location` which contains information about the new coordinates generated and the
+          :class:`Well` object.
+      :rtype: :class:`Location`
+
+
+
+.. py:class:: WellSet
+
+
+   A class defining a set of wells expressed as a dictionary in which each keys is the
+   the :attribute:`Well.name` object and the value is the :class:`Well` object itself.
+
+   .. py:attribute:: wells
+      :type: Dict[str, Well]
+
+      
+
+   .. py:method:: __repr__()
+
+      Displays the wellset as a :list: of wells and the deck-slot nunmber
+
+      :return: A :list: of :class:`Well` objects diplayed by their :attribute:`Well.name`
+      :rtype: :class:`Row`
+
+
+   .. py:method:: __getitem__(id_: Union[str, int])
+
+      Allows the user to select a :class:`Well` object by either their :attribute:`Well.name` or
+          their index in a :list:
+
+      :param id_: The :attribute:`Well.name` or index representing a :class:`Well` in the labware
+      :type id_: Union[str, int]
+      :return: The :class:`Well` object
+      :rtype: :class:`Well`
+
+
+
+.. py:class:: Row
+
+
+   Bases: :py:obj:`WellSet`
+
+   A class representing a row of a labware, for example 'A', 'B', etc
+
+   :param WellSet: A dictionary of :class:`Well` objects in which each keys is the the :attribute:`Well.name` object and the value is the :class:`Well` object itself.
+   :type WellSet: Dict[str, Well]
+
+   .. py:attribute:: identifier
+      :type: str
+
+      
+
+
+.. py:class:: Column
+
+
+   Bases: :py:obj:`WellSet`
+
+   A class representing a column of a labware, for example 1, 2, etc.
+
+   :param WellSet: A dictionary of :class:`Well` objects in which each keys is the the :attribute:`Well.name` object and the value is the :class:`Well` object itself.
+   :type WellSet: Dict[str, Well]
+
+   .. py:attribute:: identifier
+      :type: int
+
+      
+
+
+.. py:class:: Labware(labware_filename: str, offset: Tuple[float] = None, order: str = 'rows', path: str = os.path.join(os.path.dirname(__file__), 'labware_definition'))
+
+
+   Bases: :py:obj:`WellSet`
+
+   A class representing a basic laboratory labware made up of a set of wells/pipette tips.
+
+   :param labware_filename: The name of the config `.json`
+   :type labware_filename: str
+   :param offset: Coordinates to use to offset all the wells in a labware for easier handling of coordinates.
+       For example this is called by the :method:`Deck.load_labware` when assignign a labware to a deck slot, defaults to None
+   :type offset: Tuple[float], optional
+   :param order: Option to order the wells of a labware either by `row` or `columns`, defaults to 'rows'
+   :type order: str, optional
+   :param path: Path to the folder containing the configuration `.json` files for the labware,
+           defaults to the 'labware_definition/' in the science_jubilee/labware directory.
+   :type path: str, optional
+
+   .. py:property:: shape
+
+      Returns the shape of the labware as a tuple of (rows, columns)
+
+      :return: A tuple of (rows, columns)
+      :rtype: Tuple[int, int]
+
+   .. py:property:: ordering
+      :type: List[List[str]]
+
+      Returns the ordering of the wells in the labware as a list of lists. Each list represents a row of the labware.
+
+      :return: A list of lists of :class:`Well.name` objects
+      :rtype: List[List[str]]
+
+   .. py:property:: brand
+      :type: dict
+
+      Returns the brand of the labware as a strin
+
+      :return: A string with the brand of the labware
+      :rtype: str
+
+   .. py:property:: display_name
+
+      Returns the display name of the labware as a string
+
+      :return: A string with the display name of the labware
+      :rtype: str
+
+   .. py:property:: labware_type
+
+      Returns the type of labware as a string
+
+      The type fo labware will generally either be a tiprack, wellplate, reservoir, etc.
+
+      :return: A string with the type of labware
+      :rtype: str
+
+   .. py:property:: volume_units
+
+      Returns the units of volume of the labware as a string
+
+      The volume units will be either uL or mL.
+
+      :return: A string with the units of volume of the labware
+      :rtype: str
+
+   .. py:property:: dimensions
+      :type: dict
+
+      Returns the dimensions of the labware as a dictionary
+
+      :return: A dictionary with the x,y, and z dimensions of the labware
+      :rtype: dict
+
+   .. py:property:: is_tip_rack
+
+      Returns a boolean indicating if the labware is a tiprack
+
+      :return: True if the labware is a tiprack, False otherwise
+      :rtype: bool
+
+   .. py:property:: load_name
+
+      Returns the name of the labware as a string
+
+      :return: A string with the name of the labware
+      :rtype: str
+
+   .. py:property:: tip_length
+
+      Returns the length of the tip of the labware as a float if the labware is a tiprack, otherwise returns None
+
+      :return: A float with the length of the tip of the labware or None otherwise
+      :rtype: float
+
+   .. py:property:: tip_overlap
+
+      Returns the overlap of the tip of the labware as a float if the labware is a tiprack, otherwise returns None
+
+      :return: A float with the overlap of the tip of the labware or None otherwise
+      :rtype: float
+
+   .. py:property:: offset
+
+      Returns the offset of the labware as a tuple of floats
+
+      :return: A tuple of floats with the offset of the labware
+      :rtype: Tuple[float]
+
+   .. py:method:: __repr__()
+
+      Displayed representation of a :class:`Labware` object indicating the type of labware and
+      its name. Additionally, it will show the :attribute:`Deck.slots` number if the labware has been
+      already assigned to it.
+
+
+   .. py:method:: _create_rows_and_columns()
+
+      Creates a dictionary of :class:`Row` and :class:`Column` and :class:`Well` objects from the data in the config `.json` file.
+
+      :return: A dictionary of :class:`Row` and :class:`Column` and :class:`Well` objects
+      :rtype: :class:`Row`, :class:`Column`, :class:`Well`
+
+
+   .. py:method:: get_row(row_id: str) -> Row
+
+      Fucntions to fetch the :class:`Well.name` of the indicated row.
+
+      :param row_id: The name of a row of the labware, usually indicated by a capital letter (e.g., A, B, etc.)
+      :type row_id: str
+      :return: A list of :class:`Well` objects diplayed by their :attribute:`Well.name`
+      :rtype: :class:`Row`
+
+
+   .. py:method:: get_column(col_id: int) -> Column
+
+      Fucntions to fetch the :class:`Well.name` of the indicated column.
+
+      :param col_id: The name of a column of the labware, usually indicated by an integer number (e.g., 1, 2, etc.)
+      :type col_id: str
+      :return: A list of :class:`Well` objects diplayed by their :attribute:`Well.name`
+      :rtype: :class:`Column`
+
+
+   .. py:method:: metadata() -> dict
+
+      Returns the metadata of the labware as a dictionary
+
+      The metadata of a labware will generally contain the display name, the type of labware, and the units of volume.
+      These can also be found as attributes of the :class:`Labware` object.
+
+      :return: A dictionary with the metadata of the labware
+      :rtype: dict
+
+
+   .. py:method:: parameters() -> dict
+
+      Returns the parameters describing certain features of the labware as a dictionary
+
+      The parameters genereally include whether the shape of the labware is regular or irregular, if it is a tiprack,
+      and other Opentrons specific parameters as we are using their 'Custom Labware Page' to generate the .json config files.
+
+      :return: A dictionary with the parameters of the labware
+      :rtype: dict
+
+
+   .. py:method:: add_slot(slot_)
+
+      Add name of deck slot after labware has been loaded
+
+      :param slot_: The name of the deck slot
+      :type slot_: str
+
+
+   .. py:method:: withWellOrder(order) -> list
+
+      Reorders the wells by rows or by columns. Automatically updates the :attribute:`Labware.wells`
+
+      :param order: The order in which to reorder the wells. Can be either 'rows' or 'columns'
+      :type order: str
+      :return: A list of :class:`Well` objects diplayed by their :attribute:`Well.name`
+      :rtype: list
+
+
+
+.. py:class:: Point
+
+
+   Bases: :py:obj:`NamedTuple`
+
+   A point in the Jubilee 3D coordinate system.
+
+   :param NamedTuple: A list-like container with a fixed number of elements
+   :type NamedTuple: :class:`NamedTuple`
+   :return: A tuple of coordinates (x,y,z)
+   :rtype: :class:`Point`
+
+   .. py:attribute:: x
+      :type: float
+      :value: 0.0
+
+      
+
+   .. py:attribute:: y
+      :type: float
+      :value: 0.0
+
+      
+
+   .. py:attribute:: z
+      :type: float
+      :value: 0.0
+
+      
+
+   .. py:method:: add(other)
+
+      Adds the coordinates of two points
+
+      :param other: A tuple of coordinates (x,y,z)
+      :type other: :class:`Point`
+      :return: A new :class:`Point` object
+      :rtype: :class:`Point`
+
+
+   .. py:method:: substract(other)
+
+      Substracts the coordinates of two points
+
+      :param other: A tuple of coordinates (x,y,z)
+      :type other: :class:`Point`
+      :return: A new :class:`Point` object
+      :rtype: :class:`Point`
+
+
+   .. py:method:: multiply(other: Union[int, float])
+
+      Multiplies the coordinates of a point by a scalar
+
+      :param other: A scalar to multiply the coordinates of a point
+      :type other: Union[int, float]
+      :return: A new :class:`Point` object scaled by the value indicated as the function parameter
+      :rtype: :class:`Point`
+
+
+   .. py:method:: absolute()
+
+      Returns the absolute value of the coordinates of a point.
+
+      :return: The absolute values of a :class:`Point` object
+      :rtype: :class:`Point`
+
+
+   .. py:method:: __repr__() -> str
+
+      Returns a string representation of the coordinates of a point.
+
+      :return: A string representation of the coordinates of a point
+      :rtype: str
+
+
+
+.. py:class:: Location(point: Point, labware: Union[Well, Labware])
+
+
+   A location to target as a motion.
+
+   The location contains a :class:`Point` and possibly an associated
+   :class:`Labware` or :class:`Well` instance.
+
+   .. py:property:: point
+      :type: Point
+
+      The coordinates (x,y,z) of a Well or a Labware
+
+      :return: A tuple of coordinates (x,y,z)
+      :rtype: :class:`Point`
+
+   .. py:property:: labware
+
+      The :class:`Well` object associated with the coordinates (x,y,z)
+
+      :return: A :class:`Well` object
+      :rtype: :class:`Well`
+
+   .. py:method:: __iter__() -> Iterable[Union[Point, Well, Labware]]
+
+      Iterable interface to support unpacking of :class:`Location` objects.
+
+      :return: An interable of :class:`Location` objects
+      :rtype: Iterable[Union[Point, Well, Labware]]
+
+
+   .. py:method:: __eq__(other: object) -> bool
+
+      Comparison between two :class:`Location` objects.
+
+      :param other: A :class:`Location` object
+      :type other: :class:`Location`
+      :return: True if the two :class:`Location` objects are equal, False otherwise
+      :rtype: bool
+
+
+   .. py:method:: __repr__() -> str
+
+      Returns a string representation of the :class:`Location` object.
+
+      :return: A string representation of the :class:`Location` object
+      :rtype: str
+
+
+
