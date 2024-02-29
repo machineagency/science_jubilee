@@ -1,0 +1,115 @@
+:py:mod:`science_jubilee.tools.Syringe`
+=======================================
+
+.. py:module:: science_jubilee.tools.Syringe
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Syringe.Syringe
+
+
+
+
+.. py:class:: Syringe(index, name, config)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   A class representation of a syringe.
+
+   :param Tool: The base tool class
+   :type Tool: :class:`Tool`
+
+   .. py:method:: load_config(config)
+
+      Loads the confirguration file for the syringe tool
+
+      :param config: Name of the config file for your syringe. Expects the file to be in /tools/configs
+      :type config: str
+
+
+   .. py:method:: post_load()
+
+      Query the object model after loading the tool to find the extruder number of this syringe.
+
+
+
+   .. py:method:: check_bounds(pos)
+
+      Disallow commands outside of the syringe's configured range
+
+      :param pos: The E position to check
+      :type pos: float
+
+
+   .. py:method:: _aspirate(vol: float, s: int = 2000)
+
+      Aspirate a certain volume in milliliters. Used only to move the syringe; to aspirate from a particular well, see aspirate()
+
+      :param vol: Volume to aspirate, in milliliters
+      :type vol: float
+      :param s: Speed at which to aspirate in mm/min, defaults to 2000
+      :type s: int, optional
+
+
+   .. py:method:: _dispense(vol, s: int = 2000)
+
+      Dispense a certain volume in milliliters. Used only to move the syringe; to dispense into a particular well, see dispense()
+
+      :param vol: Volume to dispense, in milliliters
+      :type vol: float
+      :param s: Speed at which to dispense in mm/min, defaults to 2000
+      :type s: int, optional
+
+
+   .. py:method:: aspirate(vol: float, location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], s: int = 2000)
+
+      Aspirate a certain volume from a given well.
+
+      :param vol: Volume to aspirate, in milliliters
+      :type vol: float
+      :param location: The location (e.g. a `Well` object) from where to aspirate the liquid from.
+      :type location: Union[Well, Tuple, Location]
+      :param s: Speed at which to aspirate in mm/min, defaults to 2000
+      :type s: int, optional
+
+
+   .. py:method:: dispense(vol: float, location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], s: int = 2000)
+
+      Dispense a certain volume into a given well.
+
+      :param vol:  Volume to dispense, in milliliters
+      :type vol: float
+      :param location: The location to dispense the liquid into.
+      :type location: Union[Well, Tuple, Location]
+      :param s: Speed at which to dispense in mm/min, defaults to 2000
+      :type s: int, optional
+
+
+
+   .. py:method:: transfer(vol: float, s: int = 2000, source: science_jubilee.labware.Labware.Well = None, destination: science_jubilee.labware.Labware.Well = None, mix_before: tuple = None, mix_after: tuple = None)
+
+      Transfer liquid from source well(s) to a set of destination well(s). Accommodates one-to-one, one-to-many, many-to-one, and uneven transfers.
+
+      :param vol: Volume to transfer in milliliters
+      :type vol: float
+      :param s: Speed at which to aspirate and dispense in mm/min, defaults to 2000
+      :type s: int, optional
+      :param source: A source well or set of source wells, defaults to None
+      :type source: Well, optional
+      :param destination: A destination well or set of destination wells, defaults to None
+      :type destination: Well, optional
+      :param mix_before: Mix the source well before transfering, defaults to None
+      :type mix_before: tuple, optional
+      :param mix_after: Mix the destination well after transfering, defaults to None
+      :type mix_after: tuple, optional
+
+
+

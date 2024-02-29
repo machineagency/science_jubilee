@@ -1,0 +1,26 @@
+:py:mod:`science_jubilee`
+=========================
+
+.. py:module:: science_jubilee
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   decks/index.rst
+   labware/index.rst
+   tools/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   Machine/index.rst
+
+

@@ -1,0 +1,111 @@
+:py:mod:`science_jubilee.tools.Sonicator`
+=========================================
+
+.. py:module:: science_jubilee.tools.Sonicator
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Sonicator.Sonicator
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Sonicator.logger
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: Sonicator(index, name, mode: str, port: str = None)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   A class representation for a Qsonica Sonicator tool.
+
+   .. py:method:: _raspberrypi_hat()
+
+      Initialize the pins used on the Raspberry Pi Hat.
+
+
+   .. py:method:: _raspberrypi_pico(port: str)
+
+      Initialize serial interface with Raspberry Pi Pico microcontroller.
+
+      :param port: port to connect to the Pico microcontroller, this is computer dependent.
+      :type port: str
+
+
+   .. py:method:: _set_sonication_power(power: float)
+
+      Set the power of the sonicator to a value between 0.4 and 1.0.
+
+      :param power: power level to set the sonicator to. Must be between 0.4 and 1.0.
+      :type power: float
+
+
+   .. py:method:: _sonication_on()
+
+      Turn on the sonicator.
+
+
+   .. py:method:: _sonication_off()
+
+      Turn off the sonicator.
+
+
+   .. py:method:: _sonicate(exposure_time: float = 1.0, power: float = 0.4, pulse_duty_cycle: float = 0.5, pulse_interval: float = 1.0, verbose: bool = False)
+
+      Enable the sonicator at the power level for the exposure time.
+
+      :param exposure_time: total time to sonicate for, defaults to 1.0
+      :type exposure_time: float, optional
+      :param power: power level to sonicate at, defaults to 0.4
+      :type power: float, optional
+      :param pulse_duty_cycle: duty cycle of the sonicator pulse, defaults to 0.5
+      :type pulse_duty_cycle: float, optional
+      :param pulse_interval: interval between pulses, defaults to 1.0
+      :type pulse_interval: float, optional
+      :param verbose: whether or not to print out the time elapsed, defaults to False
+      :type verbose: bool, optional
+
+
+   .. py:method:: sonicate_well(location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], plunge_depth: float, sonication_time: float, power: float, pulse_duty_cycle: float, pulse_interval: float, verbose: bool = False, *args)
+
+      Sonicate one well at a specified depth for a given time.
+
+      :param location: location of the well to sonicate
+      :type location: Union[Well, Tuple, Location]
+      :param plunge_depth: depth (in mm) to plunge from the top of the plate.
+      :type plunge_depth: float
+      :param sonication_time: time (in sec) to sonicate for
+      :type sonication_time: float
+      :param power: sonicator power level ranging from 0.4 (default, min) through 1.0 (max).
+      :type power: float
+      :param pulse_duty_cycle: duty cycle of the sonicator pulse, defaults to 0.5
+      :type pulse_duty_cycle: float, optional
+      :param pulse_interval: interval between pulses, defaults to 1.0
+      :type pulse_interval: float, optional
+      :param verbose: whether or not to print out the time elapsed, defaults to False
+      :type verbose: bool, optional
+      :param args: if location is of type Tuple, the depth of the well needs to be specified
+      :type args: tuple
+      :raises ValueError: if the plunge depth is too deep
+
+       Note: sonicator does not turn on below power level of 0.4.
+
+
+

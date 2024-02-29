@@ -1,0 +1,42 @@
+:py:mod:`science_jubilee.decks.Plate`
+=====================================
+
+.. py:module:: science_jubilee.decks.Plate
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.decks.Plate.Plate
+
+
+
+
+.. py:exception:: PlateStateError
+
+
+   Bases: :py:obj:`Exception`
+
+   Raise this error if the plate is in the wrong state to perform such a command.
+
+
+.. py:exception:: PlateConfigurationError
+
+
+   Bases: :py:obj:`Exception`
+
+   Raise this error if there is something wrong with how the plate is configured
+
+
+.. py:class:: Plate(machine, name)
+
+
+   .. py:method:: get_root_dir()
+
+
+

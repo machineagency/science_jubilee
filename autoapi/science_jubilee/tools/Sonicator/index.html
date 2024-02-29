@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>science_jubilee.tools.Sonicator &#8212; science_jubilee 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autoapi/science_jubilee/tools/Sonicator/index';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="science_jubilee.tools.Spectrometer" href="../Spectrometer/index.html" />
+    <link rel="prev" title="science_jubilee.tools.PumpDispenser" href="../PumpDispenser/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">science_jubilee 0.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../getting_started/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../building/index.html">
+                        Build Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../development/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../getting_started/index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../building/index.html">
+                        Build Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../development/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../decks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.decks</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../decks/Deck/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.decks.Deck</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../decks/Plate/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.decks.Plate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../labware/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../labware/Labware/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.labware.Labware</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../piserver/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.piserver</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Camera/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Camera</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Loop/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Loop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PeristalticPumps/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.PeristalticPumps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Pipette/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Pipette</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PumpDispenser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.PumpDispenser</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Sonicator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Spectrometer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Spectrometer</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Syringe/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Syringe</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tool/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Tool</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../WebCamera/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.WebCamera</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Machine/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.Machine</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index.html" class="nav-link">API Reference</a></li>
+    
+    
+    <li class="breadcrumb-item"><i class="fa-solid fa-ellipsis"></i></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools</span></code></a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><code...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-science_jubilee.tools.Sonicator">
+<span id="science-jubilee-tools-sonicator"></span><h1><a class="reference internal" href="#module-science_jubilee.tools.Sonicator" title="science_jubilee.tools.Sonicator"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Sonicator</span></code></a><a class="headerlink" href="#module-science_jubilee.tools.Sonicator" title="Link to this heading">#</a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#science_jubilee.tools.Sonicator.Sonicator" title="science_jubilee.tools.Sonicator.Sonicator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sonicator</span></code></a></p></td>
+<td><p>A class representation for a Qsonica Sonicator tool.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#science_jubilee.tools.Sonicator.logger" title="science_jubilee.tools.Sonicator.logger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">logger</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.logger">
+<span class="sig-prename descclassname"><span class="pre">science_jubilee.tools.Sonicator.</span></span><span class="sig-name descname"><span class="pre">logger</span></span><a class="headerlink" href="#science_jubilee.tools.Sonicator.logger" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">science_jubilee.tools.Sonicator.</span></span><span class="sig-name descname"><span class="pre">Sonicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../Tool/index.html#science_jubilee.tools.Tool.Tool" title="science_jubilee.tools.Tool.Tool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">science_jubilee.tools.Tool.Tool</span></code></a></p>
+<p>A class representation for a Qsonica Sonicator tool.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator._raspberrypi_hat">
+<span class="sig-name descname"><span class="pre">_raspberrypi_hat</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator._raspberrypi_hat" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the pins used on the Raspberry Pi Hat.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator._raspberrypi_pico">
+<span class="sig-name descname"><span class="pre">_raspberrypi_pico</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator._raspberrypi_pico" title="Link to this definition">#</a></dt>
+<dd><p>Initialize serial interface with Raspberry Pi Pico microcontroller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>port</strong> (<em>str</em>) – port to connect to the Pico microcontroller, this is computer dependent.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator._set_sonication_power">
+<span class="sig-name descname"><span class="pre">_set_sonication_power</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator._set_sonication_power" title="Link to this definition">#</a></dt>
+<dd><p>Set the power of the sonicator to a value between 0.4 and 1.0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>power</strong> (<em>float</em>) – power level to set the sonicator to. Must be between 0.4 and 1.0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator._sonication_on">
+<span class="sig-name descname"><span class="pre">_sonication_on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator._sonication_on" title="Link to this definition">#</a></dt>
+<dd><p>Turn on the sonicator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator._sonication_off">
+<span class="sig-name descname"><span class="pre">_sonication_off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator._sonication_off" title="Link to this definition">#</a></dt>
+<dd><p>Turn off the sonicator.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator._sonicate">
+<span class="sig-name descname"><span class="pre">_sonicate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exposure_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_duty_cycle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator._sonicate" title="Link to this definition">#</a></dt>
+<dd><p>Enable the sonicator at the power level for the exposure time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exposure_time</strong> (<em>float</em><em>, </em><em>optional</em>) – total time to sonicate for, defaults to 1.0</p></li>
+<li><p><strong>power</strong> (<em>float</em><em>, </em><em>optional</em>) – power level to sonicate at, defaults to 0.4</p></li>
+<li><p><strong>pulse_duty_cycle</strong> (<em>float</em><em>, </em><em>optional</em>) – duty cycle of the sonicator pulse, defaults to 0.5</p></li>
+<li><p><strong>pulse_interval</strong> (<em>float</em><em>, </em><em>optional</em>) – interval between pulses, defaults to 1.0</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether or not to print out the time elapsed, defaults to False</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="science_jubilee.tools.Sonicator.Sonicator.sonicate_well">
+<span class="sig-name descname"><span class="pre">sonicate_well</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../labware/Labware/index.html#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><span class="pre">science_jubilee.labware.Labware.Well</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../../labware/Labware/index.html#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><span class="pre">science_jubilee.labware.Labware.Location</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">plunge_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sonication_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_duty_cycle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_interval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science_jubilee.tools.Sonicator.Sonicator.sonicate_well" title="Link to this definition">#</a></dt>
+<dd><p>Sonicate one well at a specified depth for a given time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>location</strong> (<em>Union</em><em>[</em><a class="reference internal" href="../../labware/Labware/index.html#science_jubilee.labware.Labware.Well" title="science_jubilee.labware.Labware.Well"><em>Well</em></a><em>, </em><em>Tuple</em><em>, </em><a class="reference internal" href="../../labware/Labware/index.html#science_jubilee.labware.Labware.Location" title="science_jubilee.labware.Labware.Location"><em>Location</em></a><em>]</em>) – location of the well to sonicate</p></li>
+<li><p><strong>plunge_depth</strong> (<em>float</em>) – depth (in mm) to plunge from the top of the plate.</p></li>
+<li><p><strong>sonication_time</strong> (<em>float</em>) – time (in sec) to sonicate for</p></li>
+<li><p><strong>power</strong> (<em>float</em>) – sonicator power level ranging from 0.4 (default, min) through 1.0 (max).</p></li>
+<li><p><strong>pulse_duty_cycle</strong> (<em>float</em><em>, </em><em>optional</em>) – duty cycle of the sonicator pulse, defaults to 0.5</p></li>
+<li><p><strong>pulse_interval</strong> (<em>float</em><em>, </em><em>optional</em>) – interval between pulses, defaults to 1.0</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether or not to print out the time elapsed, defaults to False</p></li>
+<li><p><strong>args</strong> (<em>tuple</em>) – if location is of type Tuple, the depth of the well needs to be specified</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>if the plunge depth is too deep</p>
+<p>Note: sonicator does not turn on below power level of 0.4.</p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../PumpDispenser/index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.PumpDispenser</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Spectrometer/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">science_jubilee.tools.Spectrometer</span></code></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.logger"><code class="docutils literal notranslate"><span class="pre">logger</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator"><code class="docutils literal notranslate"><span class="pre">Sonicator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator._raspberrypi_hat"><code class="docutils literal notranslate"><span class="pre">Sonicator._raspberrypi_hat()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator._raspberrypi_pico"><code class="docutils literal notranslate"><span class="pre">Sonicator._raspberrypi_pico()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator._set_sonication_power"><code class="docutils literal notranslate"><span class="pre">Sonicator._set_sonication_power()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator._sonication_on"><code class="docutils literal notranslate"><span class="pre">Sonicator._sonication_on()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator._sonication_off"><code class="docutils literal notranslate"><span class="pre">Sonicator._sonication_off()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator._sonicate"><code class="docutils literal notranslate"><span class="pre">Sonicator._sonicate()</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#science_jubilee.tools.Sonicator.Sonicator.sonicate_well"><code class="docutils literal notranslate"><span class="pre">Sonicator.sonicate_well()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../../_sources/autoapi/science_jubilee/tools/Sonicator/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, Machine Agency.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

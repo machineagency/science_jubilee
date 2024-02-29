@@ -1,0 +1,58 @@
+:py:mod:`science_jubilee.tools.Tool`
+====================================
+
+.. py:module:: science_jubilee.tools.Tool
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Tool.Tool
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Tool.requires_active_tool
+
+
+
+.. py:exception:: ToolStateError
+
+
+   Bases: :py:obj:`Exception`
+
+   Raise this error if the tool is in the wrong state to perform such a command.
+
+
+.. py:exception:: ToolConfigurationError
+
+
+   Bases: :py:obj:`Exception`
+
+   Raise this error if there is something wrong with how the tool is configured
+
+
+.. py:class:: Tool(index, name, **kwargs)
+
+
+   .. py:method:: post_load()
+
+      Run any code after tool has been associated with the machine.
+
+
+
+.. py:function:: requires_active_tool(func)
+
+   Decorator to ensure that a tool cannot complete an action unless it is the
+   current active tool.
+
+

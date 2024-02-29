@@ -1,0 +1,424 @@
+:py:mod:`science_jubilee.Machine`
+=================================
+
+.. py:module:: science_jubilee.Machine
+
+.. autoapi-nested-parse::
+
+   Driver for Controlling Jubilee
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.Machine.Machine
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.Machine.get_root_dir
+   science_jubilee.Machine.machine_homed
+   science_jubilee.Machine.requires_deck
+   science_jubilee.Machine.requires_safe_z
+
+
+
+.. py:function:: get_root_dir()
+
+   Return the path to the duckbot directory.
+
+
+.. py:exception:: MachineConfigurationError
+
+
+   Bases: :py:obj:`Exception`
+
+   Raise this error if there is something wrong with how the machine is configured
+
+
+
+.. py:exception:: MachineStateError
+
+
+   Bases: :py:obj:`Exception`
+
+   Raise this error if the machine is in the wrong state to perform the requested action.
+
+
+
+.. py:function:: machine_homed(func)
+
+   Decorator used to check if the machine is homed before performing certain actions.
+
+
+
+.. py:function:: requires_deck(func)
+
+   Decorator used ot check if a deck has been configured before performing certain actions.
+
+
+
+.. py:function:: requires_safe_z(func)
+
+   Decorator used to ensure the deck is at a safe height before performing certain actions.
+
+
+
+.. py:class:: Machine(port: str = None, baudrate: int = 115200, address: str = None, deck_config: str = None, simulated: bool = False)
+
+
+   A class representation of Jubilee used to send  motion commands and polling the machine state.
+
+
+   .. py:property:: configured_axes
+
+      Return the configured axes of the machine.
+      This is a list of all configured axis on the machine. Usually these are ['X', 'Y', 'Z', 'U']. If a tool has a
+      an associated driver, it will be appended at the end of the axis list.
+
+      :return: A list of configured axes.
+      :rtype: list
+
+   .. py:property:: configured_tools
+
+      Returns a list of configured tools.
+
+      :return: A list of configured tools.The tool name is queried from the `config.g` file on the machine.
+      :rtype: list
+
+      Note: This list is obtained directly from the tools added to the machine's `config.g` file.
+
+   .. py:property:: active_tool_index
+
+      Return the index of the current active tool.
+
+      :return: The index of the current active tool. If no tool is active, returns -1.
+      :rtype: int
+
+   .. py:property:: tool_z_offsets
+
+      Return (in tool order) a list of tool's z offsets.
+
+      Note: This list is obtained directly from the tools added to the machine's `config.g` file.
+
+      :return: A list of tool z offsets, in the order of the tool index
+      :rtype: list
+
+   .. py:property:: axis_limits
+
+      Return (in XYZU order) a list of tuples specifying (min, max) axis limit
+
+      :return: A list of tuples specifying (min, max) axis limit
+      :rtype: list
+
+      Note: This list is obtained directly from the tools added to the machine's `config.g` file.
+
+   .. py:property:: position
+
+      Returns the current machine control point in mm.
+
+      :return: A dictionary of the machine control point in mm. The keys are the axis name, e.g. 'X'
+      :rtype: dict
+
+   .. py:attribute:: LOCALHOST
+      :value: '192.168.1.2'
+
+      
+
+   .. py:method:: connect()
+
+      Connects to Jubilee over http.
+
+      :raises MachineStateError: If the connection to the machine is unsuccessful.
+
+
+   .. py:method:: load_deck(deck_filename: str, path: str = os.path.join(os.path.dirname(__file__), 'decks', 'deck_definition'))
+
+      Load a deck configuration file onto the machine.
+
+      :param deck_filename: The name of the deck configuration file.
+      :type deck_filename: str
+      :param path: The path to the deck configuration `.json` files for the labware,
+              defaults to the 'deck_definition/' in the science_jubilee/decks directory.
+      :type path: str, optional
+      :return: A :class:`Deck` object
+      :rtype: :class:`Deck`
+
+
+   .. py:method:: gcode(cmd: str = '', timeout=None, response_wait: float = 30)
+
+      Send a G-Code command to the Machine and return the response.
+
+      :param cmd: The G-Code command to send, defaults to ""
+      :type cmd: str, optional
+      :param timeout: The time to wait for a response from the machine, defaults to None
+      :type timeout: float, optional
+      :param response_wait: The time to wait for a response from the machine, defaults to 30
+      :type response_wait: float, optional
+
+      :return: The response message from the machine. If too long, the message might not display in the terminal.
+      :rtype: str
+
+
+   .. py:method:: _set_absolute_positioning()
+
+      Set absolute positioning for all axes except extrusion
+
+
+   .. py:method:: _set_relative_positioning()
+
+      Set relative positioning for all axes except extrusion
+
+
+   .. py:method:: _set_absolute_extrusion()
+
+      Set absolute positioning for extrusion
+
+
+   .. py:method:: _set_relative_extrusion()
+
+      Set relative positioning for extrusion
+
+
+   .. py:method:: push_machine_state()
+
+      Push machine state onto a stack
+
+
+   .. py:method:: pop_machine_state()
+
+      Recover previous machine state
+
+
+   .. py:method:: download_file(filepath: str = None, timeout: float = None)
+
+      Download a file into a file object. Full machine filepath must be specified.
+      Example: /sys/tfree0.g
+
+      :param filepath: The full filepath of the file to download, defaults to None
+      :type filepath: str, optional
+      :param timeout: The time to wait for a response from the machine, defaults to None
+      :type timeout: float, optional
+      :return: The file contents
+      :rtype: file object
+
+
+   .. py:method:: reset()
+
+      Issue a software reset.
+
+
+   .. py:method:: home_all()
+
+      Home all axes.
+
+
+   .. py:method:: home_xyu()
+
+      Home the XYU axes. Home Y before X to prevent possibility of crashing into the tool rack.
+
+
+
+   .. py:method:: home_x()
+
+      Home the X axis
+
+
+   .. py:method:: home_y()
+
+      Home the Y axis
+
+
+   .. py:method:: home_u()
+
+      Home the U (tool) axis
+
+
+   .. py:method:: home_v()
+
+      Home the V axis
+
+
+   .. py:method:: home_z()
+
+      Home the Z axis.
+      Note: The deck must be clear first. Will ask for user input to verify.
+
+
+   .. py:method:: home_e()
+
+      Home the extruder axis (syringe)
+
+
+   .. py:method:: home_in_place(*args: str)
+
+      Set the current location of a machine axis or axes to 0.
+
+
+   .. py:method:: _move_xyzev(x: float = None, y: float = None, z: float = None, e: float = None, v: float = None, s: float = 6000, param: str = None, wait: bool = False)
+
+      Move X/Y/Z/E/V axes. Set absolute/relative mode externally.
+
+      :param x: x position on the bed, in whatever units have been set (default mm)
+      :type x: float, optional
+      :param y: y position on the bed, in whatever units have been set (default mm)
+      :type y: float, optional
+      :param z: z position on the bed, in whatever units have been set (default mm)
+      :type z: float, optional
+      :param e: extruder position, in whatever units have been set (default mm)
+      :type e: float, optional
+      :param v: v axis position, in whatever units have been set (default mm)
+      :type v: float, optional
+      :param s: speed at which to move (default 6000 mm/min)
+      :type s: float, optional
+
+
+   .. py:method:: move_to(x: float = None, y: float = None, z: float = None, e: float = None, v: float = None, s: float = 6000, param: str = None, wait: bool = False)
+
+      Move to an absolute X/Y/Z/E/V position.
+
+      :param x: x position on the bed, in whatever units have been set (default mm)
+      :type x: float, optional
+      :param y: y position on the bed, in whatever units have been set (default mm)
+      :type y: float, optional
+      :param z: z position on the bed, in whatever units have been set (default mm)
+      :type z: float, optional
+      :param e: extruder position, in whatever units have been set (default mm)
+      :type e: float, optional
+      :param v: v axis position, in whatever units have been set (default mm)
+      :type v: float, optional
+      :param s: speed at which to move (default 6000 mm/min)
+      :type s: float, optional
+
+
+
+   .. py:method:: move(dx: float = 0, dy: float = 0, dz: float = 0, de: float = 0, dv: float = 0, s: float = 6000, param: str = None, wait: bool = False)
+
+      Move relative to the current position
+
+      :param dx: change in x position, in whatever units have been set (default mm)
+      :type dx: float, optional
+      :param dy: change in y position, in whatever units have been set (default mm)
+      :type dy: float, optional
+      :param dz: change in z position, in whatever units have been set (default mm)
+      :type dz: float, optional
+      :param de: change in e position, in whatever units have been set (default mm)
+      :type de: float, optional
+      :param dv: change in v position, in whatever units have been set (default mm)
+      :type dv: float, optional
+      :param s:  speed at which to move (default 6000 mm/min)
+      :type s: float, optional
+
+
+   .. py:method:: dwell(t: float, millis: bool = True)
+
+      Pauses the machine for a period of time.
+
+      :param t: time to pause, in milliseconds by default
+      :type t: float
+      :param millis: boolean, set to false to use seconds. default unit is milliseconds.
+      :type millis: bool, optional
+
+
+   .. py:method:: safe_z_movement()
+
+      Move the Z axis to a safe height to avoid crashing into labware.
+
+
+
+   .. py:method:: _get_tool_index(tool_item: Union[int, science_jubilee.tools.Tool.Tool, str])
+
+      Return the tool index from the provided tool item.
+
+      This method is allows the user to call a toll by its index, its name, or to use a :class:`Tool` object
+      directly.
+
+      :param tool_item: The tool index, name, or :class:`Tool` object
+      :type tool_item: Union[int, Tool, str]
+      :return: The tool index
+      :rtype: int
+
+
+   .. py:method:: load_tool(tool: science_jubilee.tools.Tool.Tool = None)
+
+      Add a new tool for use on the machine.
+
+
+   .. py:method:: reload_tool(tool: science_jubilee.tools.Tool.Tool = None)
+
+      Update a tool which has already been loaded.
+
+
+   .. py:method:: pickup_tool(tool_id: Union[int, str, science_jubilee.tools.Tool.Tool])
+
+      Pick up the tool specified by a tool index, name or :class:`Tool` object.
+
+      :param tool_id: The tool index, name, or :class:`Tool` object
+      :type tool_id: Union[int, str, Tool]
+      :raises MachineConfigurationError: If the tool is not loaded on the machine.
+      :raises ValueError: If the indicated tool_id is not of type Union[int, str, Tool].
+
+
+   .. py:method:: park_tool()
+
+      Park the current tool adn cahnges active tool index to `-1`.
+
+
+   .. py:method:: get_position()
+
+      Get the current position of the machine control point in mm.
+
+      :return: A dictionary of the machine control point in mm. The keys are the axis name, e.g. 'X'
+      :rtype: dict
+
+
+   .. py:method:: load_labware(labware_filename: str, slot: int, path: str = None, order: str = 'rows')
+
+      Function that loads a labware and associates it with a specific slot on the deck.
+       The slot offset is also applied to the labware asocaite with it.
+
+      :param labware_filename: The name of the labware configuration file.
+      :type labware_filename: str
+      :param slot: The index of the slot to load the labware into.
+      :type slot: int
+      :param path: The path to the labware configuration `.json` files for the labware.
+      :type path: str, optional
+      :param order: The order in which the labware is arranged on the deck.
+              Can be 'rows' or 'columns', defaults to 'rows'.
+      :type order: str, optional
+      :return: The :class:`Labware` object that has been loaded into the slot.
+      :rtype: :class:`Labware`
+
+
+   .. py:method:: tool_lock()
+
+      Runs Jubilee tool lock macro. Assumes tool_lock.g macro exists.
+
+
+   .. py:method:: tool_unlock()
+
+      Runs Jubilee tool unlock macro. Assumes tool_unlock.g macro exists.
+
+
+   .. py:method:: disconnect()
+
+      Close the connection.
+
+
+   .. py:method:: __enter__()
+
+
+   .. py:method:: __exit__(*args)
+
+
+

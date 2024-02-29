@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Lab Automation Deck Tutorial &#8212; science_jubilee 0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=2709fde1"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/deck_guide';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">science_jubilee 0.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../building/index.html">
+                        Build Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../development/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../autoapi/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../building/index.html">
+                        Build Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../development/index.html">
+                        Development
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../autoapi/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Lab...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="lab-automation-deck-tutorial">
+<span id="deck-guide"></span><h1>Lab Automation Deck Tutorial<a class="headerlink" href="#lab-automation-deck-tutorial" title="Link to this heading">#</a></h1>
+<p>Last Edited: Blair, 2023.11.13</p>
+<p>This guide walks you through the basics of using a lab automation deck in conjunction with labware. It assumes you have a lab automation deck installed on your machine.</p>
+<section id="creating-a-deck-definition">
+<h2>Creating a Deck Definition<a class="headerlink" href="#creating-a-deck-definition" title="Link to this heading">#</a></h2>
+<p>The standard lab automation deck consists of 6 slots (indices 0-5), and a number of optional garbage containers which can be positioned outside of the deck footprint:</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/plate.png"><img alt="deck layout." src="../_images/plate.png" style="width: 426.0px; height: 425.5px;" /></a>
+<figcaption>
+<p><span class="caption-text">A lab automation deck holding a 6-, 24-, and 96-well plate as well as a pipette tip rack and petri dish of duckweed. The 3D printed frame off the bed houses a sharps container.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/deck_layout.png"><img alt="deck layout." src="../_images/deck_layout.png" style="width: 643.5px; height: 451.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">Orientation of slots on deck and labware in slots.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To use the lab automation deck, we need to set the offsets for each of the 6 slots, as well as any off-deck containers, and place the definition in the <code class="docutils literal notranslate"><span class="pre">decks/deck_definitions/</span></code> directory. The preferred method to do so accurately is with a camera tool; the <a class="reference external" href="https://github.com/machineagency/science_jubilee/blob/main/science_jubilee/calibration/LabAutomationDeckCalibration.ipynb">deck definition calibration notebook</a> interactively guides you through this process. If you do not have a camera tool, this can also be done using any other tool that extends into the build volume such that you can accurately align the tool tip to a corner of each slot.</p>
+</section>
+<section id="creating-labware-definitions">
+<h2>Creating Labware Definitions<a class="headerlink" href="#creating-labware-definitions" title="Link to this heading">#</a></h2>
+<p>Each piece of labware requires a labware definition in <code class="docutils literal notranslate"><span class="pre">labware/labware_definitions</span></code>. This file contains accurate measurements and information about the dimensions, well positions, and more for your labware. Our format is identical to the <a class="reference external" href="https://support.opentrons.com/s/article/What-is-a-labware-definition">OpenTrons labware definitions</a>. If you have used an OpenTrons before, this means you can use any existing labware definitions you have with Jubilee. It also means you can use the Opentrons <a class="reference external" href="https://labware.opentrons.com/create/">Labware Designer</a> to create custom definitions.</p>
+<p>In general, labware is saved in the format <code class="docutils literal notranslate"><span class="pre">&lt;brand&gt;_&lt;number_of_wells&gt;_&lt;labware_type&gt;_&lt;well_volume&gt;_&lt;extra_identifiers&gt;.json</span></code>. For example, a Corning 96 well plate has the name <code class="docutils literal notranslate"><span class="pre">corning_96_wellplate_360ul_flat.json</span></code>; an OpenTrons pipette tip rack is named <code class="docutils literal notranslate"><span class="pre">opentrons_96_tiprack_300ul.json</span></code>. We recommend following this convention for specificity and for sharing experimental workflows.</p>
+</section>
+<section id="using-a-lab-automation-deck-labware">
+<h2>Using a Lab Automation Deck + Labware<a class="headerlink" href="#using-a-lab-automation-deck-labware" title="Link to this heading">#</a></h2>
+<p>We can use our deck + labware definitions in code. First, we need to import relevant modules:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">science_jubilee.Machine</span> <span class="kn">import</span> <span class="n">Machine</span>
+<span class="kn">from</span> <span class="nn">science_jubilee.Decks</span> <span class="kn">import</span> <span class="n">Deck</span>
+</pre></div>
+</div>
+<p>We can then load a deck onto the machine, and labware into the deck:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">Machine</span><span class="p">()</span>
+<span class="n">deck</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">load_deck</span><span class="p">(</span><span class="s2">&quot;&lt;my_deck_definition&gt;&quot;</span><span class="p">)</span>
+<span class="n">labware</span> <span class="o">=</span> <span class="n">deck</span><span class="o">.</span><span class="n">load_labware</span><span class="p">(</span><span class="s2">&quot;&lt;my_labware_defintion&gt;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that we can omit the <code class="docutils literal notranslate"><span class="pre">.json</span></code> file extension. Let’s take an example using a 24-well plate. Each labware is made up of a numbe of <code class="docutils literal notranslate"><span class="pre">Well</span></code> objects. We can access information like size and location of each well by its row-column identification (A1, A2, …) or its index (0, 1, …), where index 0 corresponds to A1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">labware</span> <span class="o">=</span> <span class="n">deck</span><span class="o">.</span><span class="n">load_labware</span><span class="p">(</span><span class="s2">&quot;greiner_24_wellplate_3300ul&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">well</span> <span class="o">=</span> <span class="n">labware</span><span class="p">[</span><span class="s2">&quot;A1&quot;</span><span class="p">]</span> <span class="c1"># Identical to labware[0]</span>
+</pre></div>
+</div>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">well</span></code> for this labware is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Well</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mf">16.5</span><span class="p">,</span> <span class="n">totalLiquidVolume</span><span class="o">=</span><span class="mi">3300</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="s1">&#39;circular&#39;</span><span class="p">,</span>
+    <span class="n">diameter</span><span class="o">=</span><span class="mf">16.28</span><span class="p">,</span> <span class="n">xDimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">yDimension</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">175.13</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="mf">79.3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="mf">160.0</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">offset</span></code> comes from your specific automation deck calibration, and is used to adjust the position of each well. All other information derives from your labware definition. We can access each attribute directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">well</span><span class="o">.</span><span class="n">x</span>      <span class="c1"># 175.13, the x position of the well center</span>
+<span class="n">well</span><span class="o">.</span><span class="n">y</span>      <span class="c1"># 79.3,   the y position of the well center</span>
+<span class="n">well</span><span class="o">.</span><span class="n">depth</span>  <span class="c1"># 16.5,   the usable depth of this well from the top of the labware</span>
+<span class="n">well</span><span class="o">.</span><span class="n">z</span>      <span class="c1"># 7.5,    the thickness of the labware plate</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-deck-definition">Creating a Deck Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-labware-definitions">Creating Labware Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-lab-automation-deck-labware">Using a Lab Automation Deck + Labware</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/getting_started/deck_guide.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, Machine Agency.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

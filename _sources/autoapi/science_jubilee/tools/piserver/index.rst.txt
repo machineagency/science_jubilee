@@ -1,0 +1,35 @@
+:py:mod:`science_jubilee.tools.piserver`
+========================================
+
+.. py:module:: science_jubilee.tools.piserver
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.piserver.create_app
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.piserver.scratch_fp
+
+
+.. py:data:: scratch_fp
+   :value: './'
+
+   
+
+.. py:function:: create_app()
+
+

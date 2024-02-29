@@ -1,0 +1,133 @@
+:py:mod:`science_jubilee.tools.WebCamera`
+=========================================
+
+.. py:module:: science_jubilee.tools.WebCamera
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.WebCamera.Camera
+
+
+
+
+.. py:class:: Camera(index, name, ip_address, port, video_endpoint, still_endpoint, image_folder, light: bool = False, light_pin: int = None)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   A class representation of a Raspberry Pi camera server client.
+
+
+   .. py:method:: from_config(index, name, config_file: str, path: str = os.path.join(os.path.dirname(__file__), 'configs'))
+      :classmethod:
+
+      Initialize the pipette object from a config file
+
+      :param index: The tool index of the pipette on the machine
+      :type index: int
+      :param name: The name associated with the tool (e.g. 'WebCamera')
+      :type name: str
+      :param config_file: The name of the config file containing the tool parameters
+      :type config_file: str
+      :param path: The path to the labware configuration `.json` files for the labware,
+              defaults to the 'labware_definition/' in the science_jubilee/labware directory.
+      :type path: str, optional
+      :return: the initialized :class:`Camera` object
+      :rtype: :class:`Camera` object
+
+
+   .. py:method:: _capture_image(timeout=10)
+
+      Capture image from raspberry pi and write to file
+
+      :param timeout: the timeout for the http request, defaults to 10
+      :type timeout: int, optional
+      :return: the image as a bstring
+      :rtype: bytes
+
+
+   .. py:method:: capture_image(location: Union[science_jubilee.labware.Labware.Well, Tuple], light: bool = False, light_intensity: int = 0)
+
+      Capture an image from the WebCamera at the specified location
+
+      :param location: the location of the well to capture an image of
+      :type location: Union[Well, Tuple]
+      :param light: Option to turn on a ring light before taking the image, defaults to False
+      :type light: bool, optional
+      :param light_intensity: Intensity of the led rign light, defaults to 0
+      :type light_intensity: int, optional
+      :return: the image as an bstring
+      :rtype: bytes
+
+
+   .. py:method:: video_feed()
+
+      Deploys a video feed at the url specified in the config file
+
+
+
+   .. py:method:: decode_image(image_bin)
+
+      Decode a bstring image into an np.array
+
+      :param image_bin: the image as a bstring
+      :type image_bin: bytes
+      :return: the image as an np.array
+      :rtype: np.array
+
+
+   .. py:method:: process_image(image_bin, radius=50)
+
+      Externally callable function to run processing pipeline
+
+      :param image_bin: the image as a bstring
+      :type image_bin: bytes
+      :param radius: the radius (in pixels) of the circular mask, defaults to 50
+      :type radius: int, optional
+      :return: the average rgb values of the masked image
+      :rtype: list
+
+
+
+   .. py:method:: _mask_image(image, radius=50)
+
+      Apply a circular mask to an image
+
+      :param image: the image object
+      :type image: np.array
+      :param radius: the size (in pixels) of the circular mask, defaults to 50
+      :type radius: int, optional
+      :return: the masked image
+      :rtype: np.array
+
+
+   .. py:method:: _get_rgb_avg(image)
+
+      Extract the average rgb values from an image
+
+      :param image: the image object
+      :type image: np.array
+      :return: the average rgb values in a list [R,G,B]
+      :rtype: list
+
+
+   .. py:method:: view_image(image_bin, masked=False, radius=50)
+
+      Show the image in a matplotlib window
+
+      :param image_bin: the image as a bstring
+      :type image_bin: bytes
+      :param masked: Wether to mask the image or not, defaults to False
+      :type masked: bool, optional
+      :param radius: the size (in pixel) of the circular mask toapply to the image , defaults to 50
+      :type radius: int, optional
+
+
+

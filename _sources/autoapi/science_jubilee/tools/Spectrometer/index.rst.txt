@@ -1,0 +1,160 @@
+:py:mod:`science_jubilee.tools.Spectrometer`
+============================================
+
+.. py:module:: science_jubilee.tools.Spectrometer
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Spectrometer.SpectroscopyTool
+   science_jubilee.tools.Spectrometer.MeasurementManager
+
+
+
+
+.. py:class:: SpectroscopyTool(index, name)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`, :py:obj:`oceandirect.OceanDirectAPI.OceanDirectAPI`
+
+   A class representation for an Ocean Optics Spectrometer, Light source, and Probe
+
+   For that we wil be unfortunately using their own SDK package, which is NOT
+   open-source.
+
+   .. py:property:: _api_version
+
+      The version of the Ocean Insight SDK
+
+   .. py:property:: _usb_device
+
+
+   .. py:property:: _device_id
+
+      The ID of the spectrometer
+
+   .. py:property:: _model
+
+      The spectrometer model
+
+   .. py:property:: _serial_number
+
+      The spectrometer serial number
+
+   .. py:property:: _integration_time
+
+
+   .. py:property:: wavelengths
+
+      Return list containing the wavelengths of the spectrometer.
+
+      :return: A list of wavelengths
+      :rtype: list
+
+   .. py:method:: _open_device()
+
+      Connects to the spectrometer device
+
+
+   .. py:method:: integration_time(t: float, units: str = 'ms')
+
+      Sets the integration time for the spectrometer.
+
+      :param t: integration time
+      :type t: float
+      :param units: units of integration time, defaults to 'ms'
+      :type units: str, optional
+
+
+   .. py:method:: scans_to_average(n: int)
+
+      Set the number of scans to average together to compose a single spectrum.
+
+      :param n: number of scans to average
+      :type n:int
+
+
+
+   .. py:method:: boxcar_width(w: int = None)
+
+      Unit used to smooth the spectrum.
+
+      The boxcar width is the number of adjacent pixels that are averaged together to smooth the spectrum.
+      Pixel average = 2* boxcar_width + 1
+
+      :param w: boxcar width
+      :type w: int
+
+
+   .. py:method:: lamp_shutter(open=True)
+
+      Opens or closes light source shutter, if feature is available on light source.)
+
+      :param state: True opens the shutter/False closes it, defaults to False
+      :type state: bool, optional
+
+
+   .. py:method:: _take_spectrum(shutter='Open')
+
+      Collect a spectrum with the specified experimental parameters
+
+
+   .. py:method:: dark_spectrum(int_time: float, scan_num: int, boxcar_w: int = None, save: bool = False, path: str = None, filename: str = None)
+
+      Collect a dark spectrum with the specified experimental parameters.
+
+      A dark spectrum is collected when no light is incident on the detector.
+      This shuold later be used to correct the actual spectrum for dark counts (i.e. thermal noise).
+      Note: these shuold be the same as the ones used for the actual spectrum.
+
+      :param int_time: integration time
+
+
+   .. py:method:: _collect_raw_spectrum(int_time: float, scan_num: int, boxcar_w: int, int_time_units: str = 'ms')
+
+      Collect a spectrum with the specified experimental parameters
+
+      :param int_time: integration time
+      :type int_time: float
+      :param scan_num: number of scans to average
+      :type scan_num: int
+      :param boxcar_w: boxcar width for smoothing the spectrum, defaults to None
+      :type boxcar_w: int, optional
+      :param int_time_units: units of integration time, defaults to 'ms'
+      :type int_time_units: str, optional
+      :return: spectrum
+      :rtype: numpy array
+
+
+   .. py:method:: collect_spectrum(location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], int_time, scan_num, boxcar_w, int_time_units='ms', save: bool = False, filename: str = None, path: str = None)
+
+      Collect spectrum at the specified location on the labware
+
+
+   .. py:method:: save_to_file(dark: bool = False, path: str = None, filename: str = None)
+
+      Save the spectrum to a file
+
+
+
+.. py:class:: MeasurementManager(metadata, raw_data)
+
+
+   A class to manage the measurements taken by the SpectroscopyTool
+
+   .. py:method:: pretty_print()
+
+
+   .. py:method:: generate_file(filename, path)
+
+
+   .. py:method:: read_file()
+
+
+

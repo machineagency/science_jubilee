@@ -1,0 +1,298 @@
+:py:mod:`science_jubilee.tools.Pipette`
+=======================================
+
+.. py:module:: science_jubilee.tools.Pipette
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Pipette.Pipette
+   science_jubilee.tools.Pipette.pipette_iterator
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Pipette.tip_check
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.Pipette.logger
+
+
+.. py:data:: logger
+
+   
+
+.. py:function:: tip_check(func)
+
+   Decorator to check if the pipette has a tip attached before performing an action.
+
+
+
+.. py:class:: Pipette(index, name, brand, model, max_volume, min_volume, zero_position, blowout_position, drop_tip_position, mm_to_ul)
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   A class representation of an Opentrons OT2 pipette.
+
+
+   .. py:method:: from_config(index, name, config_file: str, path: str = os.path.join(os.path.dirname(__file__), 'configs'))
+      :classmethod:
+
+      Initialize the pipette object from a config file
+
+      :param index: The tool index of the pipette on the machine
+      :type index: int
+      :param name: The tool name
+      :type name: str
+      :param config_file: The name of the config file containign the pipette parameters
+      :type config_file: str
+      :param path: The path to the labware configuration `.json` files for the labware,
+              defaults to the 'labware_definition/' in the science_jubilee/labware directory.
+      :returns: A :class:`Pipette` object
+      :rtype: :class:`Pipette`
+
+
+   .. py:method:: vol2move(vol)
+
+      Converts desired volume in uL to a movement of the pipette motor axis
+
+      :param vol: The desired amount of liquid expressed in uL
+      :type vol: float
+      :return: The corresponding motor movement in mm
+      :rtype: float
+
+
+   .. py:method:: prime(s=2500)
+
+      Moves the plunger to the low-point on the pipette motor axis to prepare for further commands
+      Note::This position should not engage the pipette tip plunger
+
+      :param s: The speed of the plunger movement in mm/min
+      :type s: int
+
+
+   .. py:method:: _aspirate(vol: float, s: int = 2000)
+
+      Moves the plunger upwards to aspirate liquid into the pipette tip
+
+      :param vol: The volume of liquid to aspirate in uL
+      :type vol: float
+      :param s: The speed of the plunger movement in mm/min
+      :type s: int
+
+
+   .. py:method:: aspirate(vol: float, location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], s: int = 2000)
+
+      Moves the pipette to the specified location and aspirates the desired volume of liquid
+
+      :param vol: The volume of liquid to aspirate in uL
+      :type vol: float
+      :param location: The location from where to aspirate the liquid from.
+      :type location: Union[Well, Tuple, Location]
+      :param s: The speed of the plunger movement in mm/min, defaults to 2000
+      :type s: int, optional
+      :raises ToolStateError: If the pipette does not have a tip attached
+
+
+   .. py:method:: _dispense(vol: float, s: int = 2000)
+
+      Moves the plunger downwards to dispense liquid out of the pipette tip
+
+      :param vol: The volume of liquid to dispense in uL
+      :type vol: float
+      :param s: The speed of the plunger movement in mm/min
+      :type s: int
+
+      Note:: Ideally the user does not call this functions directly, but instead uses the :method:`dispense` method
+
+
+   .. py:method:: dispense(vol: float, location: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], s: int = 2000)
+
+      Moves the pipette to the specified location and dispenses the desired volume of liquid
+
+      :param vol: The volume of liquid to dispense in uL
+      :type vol: float
+      :param location: The location to dispense the liquid into.
+      :type location: Union[Well, Tuple, Location]
+      :param s: The speed of the plunger movement in mm/min, defaults to 2000
+      :type s: int, optional
+      :raises ToolStateError: If the pipette does not have a tip attached
+
+
+   .. py:method:: transfer(vol: float, source_well: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], destination_well: Union[science_jubilee.labware.Labware.Well, Tuple, science_jubilee.labware.Labware.Location], s: int = 3000, blowout=None, mix_before: tuple = None, mix_after: tuple = None, new_tip: str = 'always')
+
+      Transfers the desired volume of liquid from the source well to the destination well
+
+      This is a combination of the :method:`aspirate` and :method:`dispense` steps.
+
+      :param vol: The volume of liquid to transfer in uL
+      :type vol: float
+      :param source_well: The location from where to aspirate the liquid from.
+      :type source_well: Union[Well, Tuple, Location]
+      :param destination_well: The location to dispense the liquid into.
+      :type destination_well: Union[Well, Tuple, Location]
+      :param s: The speed of the plunger movement in mm/min, defaults to 3000
+      :type s: int, optional
+      :param blowout: The location to blowout any remainign liquid in the pipette tip
+      :type blowout: Union[Well, Tuple, Location], optional
+      :param mix_before: The number of times to mix before dispensing and the volume to mix
+      :type mix_before: tuple, optional
+      :param mix_after: The number of times to mix after dispensing and the volume to mix
+      :type mix_after: tuple, optional
+      :param new_tip: Whether or not to use a new tip for the transfer. Can be 'always', 'never', or 'once'
+
+      Note:: :param new_tip: still not implemented at the moment (2023-11-16)
+
+
+   .. py:method:: blowout(s: int = 3000)
+
+      Blows out any remaining liquid in the pipette tip
+
+      :param s: The speed of the plunger movement in mm/min, defaults to 3000
+      :type s: int, optional
+
+
+   .. py:method:: air_gap(vol)
+
+      Moves the plunger upwards to aspirate air into the pipette tip
+
+      :param vol: The volume of air to aspirate in uL
+      :type vol: float
+
+
+   .. py:method:: mix(vol: float, n: int, s: int = 5000)
+
+      Mixes liquid by alternating aspirate and dispense steps for the specified number of times
+
+      :param vol: The volume of liquid to mix in uL
+      :type vol: float
+      :param n: The number of times to mix
+      :type n: int
+      :param s: The speed of the plunger movement in mm/min, defaults to 5000
+      :type s: int, optional
+
+
+   .. py:method:: stir(n_times: int = 1, height: float = None)
+
+      Stirs the liquid in the current well by moving the pipette tip in a circular motion
+
+      :param n_times: The number of times to stir the liquid, defaults to 1
+      :type n_times: int, optional
+      :param height: The z-coordinate to move the tip to during the stir step, defaults to None
+      :type height: float, optional
+      :raises ToolStateError: If the pipette does not have a tip attached before stirring or if the pipette is not in a well
+
+
+   .. py:method:: update_z_offset(tip: bool = None)
+
+      Shift the z-offset of the tool to account for the tip length
+
+      :param tip: Parameter to indicated whether to add or remove the tip offset, defaults to None
+      :type tip: bool, optional
+
+
+   .. py:method:: add_tiprack(tiprack: Union[science_jubilee.labware.Labware.Labware, list])
+
+      Associate a tiprack with the pipette tool
+
+      :param tiprack: The tiprack to associate with the pipette
+      :type tiprack: Union[Labware, list]
+
+
+   .. py:method:: _pickup_tip(z)
+
+      Moves the Jubilee Z-axis upwards to pick up a pipette tip and stops once the tip sensor is triggered
+
+      :param z: The z-coordinate to move the pipette to
+      :type z: float
+      :raises ToolStateError: If the pipette already has a tip attached
+
+
+   .. py:method:: pickup_tip(tip_: Union[science_jubilee.labware.Labware.Well, Tuple] = None)
+
+      Moves the pipette to the specified location and picks up a tip
+
+      This function can either take a specific tip or if not specified, will pick up the next available
+      tip in the tiprack associated with the pipette.
+
+      :param tip_: The location of the pipette tip to pick up, defaults to None
+      :type tip_: Union[Well, Tuple], optional
+
+
+   .. py:method:: return_tip(location: science_jubilee.labware.Labware.Well = None)
+
+      Returns the pipette tip to the either the specified location or to where the tip was picked up from
+
+      :param location: The location to return the tip to, defaults to None (i.e. return to where the tip was picked up from)
+      :type location: :class:`Well`, optional
+
+
+   .. py:method:: _drop_tip()
+
+      Moves the plunger to eject the pipette tip
+
+      :raises ToolConfigurationError: If the pipette does not have a tip attached
+
+
+   .. py:method:: increment_tip()
+
+      Increment the next available tip
+
+
+
+   .. py:method:: drop_tip(location: Union[science_jubilee.labware.Labware.Well, Tuple])
+
+      Moves the pipette to the specified location and drops the pipette tip
+
+      :param location: The location to drop the tip into
+      :type location: Union[:class:`Well`, tuple]
+
+
+
+.. py:class:: pipette_iterator(tiprack)
+
+
+   An iterator for iterating through a tiprack
+
+   :param tiprack: The tiprack to iterate through
+   :type tiprack: :class:`Labware`
+
+   .. py:method:: next()
+
+      Returns the next available tip in the tiprack
+
+      :raises StopIteration: If there are no more tips available in the tiprack
+      :return: The next available tip in the tiprack
+      :rtype: :class:`Well`
+
+
+   .. py:method:: prev()
+
+      Returns the previous available tip in the tiprack
+
+      :raises StopIteration: If the current pipette tip is the first tip in the tiprack
+      :return: _description_
+      :rtype: _type_
+
+
+   .. py:method:: __iter__()
+
+
+

@@ -1,0 +1,60 @@
+:py:mod:`science_jubilee.tools.PeristalticPumps`
+================================================
+
+.. py:module:: science_jubilee.tools.PeristalticPumps
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.tools.PeristalticPumps.PeristalticPumps
+
+
+
+
+.. py:class:: PeristalticPumps(n_pumps: int, steps_per_ml: Union[float, int, list], tool_axis: str = 'E', name: str = 'dispenser_pumps')
+
+
+   Bases: :py:obj:`science_jubilee.tools.Tool.Tool`
+
+   class representation of peristaltic pumps. Due to duet-level axis definition requirements, currently requires an accompanying PumpDispenser tool to control pumps.
+
+   :param n_pumps: Number of peristaltic pumps
+   :type n_pumps: int
+   :param steps_per_mL: stepper motor steps to turn pump to pump 1mL of liquid. calibrate gravimetrically. Can pass a float or int to apply same value to each pump or list to apply unique value to each pump.
+   :type steps_per_mL: float, int, list
+   :param tool_axis: Motion axis tool is defined to on duet. Default E
+   :type tool_axis: str
+   :param name: name of tool
+   :type name: str
+
+   .. py:method:: from_config(config_file: str, path: str = os.path.join(os.path.dirname(__file__), 'configs'))
+      :classmethod:
+
+      Initialize a PeristalticPumps object from a config file
+
+      :param config_file: The name of the config file containign the pump parameters
+      :type config_file: str
+      :returns: A :class:`PeristalticPumps` object
+      :rtype: :class:`PeristalticPumps`
+
+
+   .. py:method:: post_load()
+
+      After tool load, set steps per mm on machine
+
+
+   .. py:method:: pump(volume: Union[int, float, list])
+
+      transfer volume using pump
+
+      :param volume: volume to pump. Specify a number (int/float) to pump same amount from all pumps simultaneously, or a list of numbers to pump unique amount from each pump.
+      :type volume: int, float, list
+
+
+

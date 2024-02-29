@@ -1,0 +1,176 @@
+:py:mod:`science_jubilee.decks.Deck`
+====================================
+
+.. py:module:: science_jubilee.decks.Deck
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   science_jubilee.decks.Deck.Slot
+   science_jubilee.decks.Deck.SlotSet
+   science_jubilee.decks.Deck.Deck
+
+
+
+
+.. py:class:: Slot
+
+
+   Class that defines a slot on the Jubilee deck.
+   Each slot has a unique index, offset, and can have a labware associated with it.
+
+   :param slot_index: The unique index of the slot, usually a number between 0 and 5.
+   :type slot_index: int
+   :param offset: The (x,y) offset of the slot from the origin of the deck/machine.
+   :type offset: Tuple[float]
+   :param has_labware: A boolean that indicates whether a labware has been loaded into the slot.
+   :type has_labware: bool
+   :param labware: The :class:`Labware` object that has been loaded into the slot.
+   :type labware: :class:`Labware`
+
+   .. py:attribute:: slot_index
+      :type: int
+
+      
+
+   .. py:attribute:: offset
+      :type: Tuple[float]
+
+      
+
+   .. py:attribute:: has_labware
+      :type: bool
+
+      
+
+   .. py:attribute:: labware
+      :type: str
+
+      
+
+
+.. py:class:: SlotSet
+
+
+   Class that defines a set of slots on the Jubilee deck.
+
+   :param slots: A dictionary of :class:`Slot` objects, where the key is the slot's index.
+   :type slots: Dict[str, :class:`Slot`]
+   :param bedType: The type of bed that the slots are arranged in. Usually 'fixed' or 'removable'.
+   :type bedType: str
+
+
+   .. py:attribute:: slots
+      :type: Dict[str, Slot]
+
+      
+
+   .. py:method:: __repr__()
+
+      Return repr(self).
+
+
+   .. py:method:: __getitem__(id_)
+
+      Allows the user to select a :class:`Slot` object by its index or key.
+
+      :param id_: The index or key representing the slot.
+      :type id_: str or int
+      :return: The :class:`Slot` object associated with the index or key.
+      :rtype: :class:`Slot`
+
+
+
+.. py:class:: Deck(deck_filename, path: str = os.path.join(os.path.dirname(__file__), 'deck_definition'))
+
+
+   Bases: :py:obj:`SlotSet`
+
+   Class that defines the Jubilee deck.
+
+   The deck is a set of slots that can have labware loaded into them.
+   The deck is defined by a configuration file that specifies the number of slots, their offsets, and the type of bed they are arranged in.
+
+   :param deck_filename: The name of the deck configuration file.
+   :type deck_filename: str
+   :param path: The path to the deck configuration `.json` files for the labware,
+           defaults to the 'deck_definition/' in the science_jubilee/decks directory.
+   :type path: str, optional
+
+   .. py:property:: bedType
+
+      Function that returns the type of bed loaded onto Jubilee.
+
+      :return: The name/type of deck loaded onto Jubilee, e.g., Lab Automation Deck, Heated Deck, etc.
+      :rtype: str
+
+   .. py:property:: totalslots
+
+      Function that returns the total number of slots on the deck.
+
+      :return: The total number of slots on the deck.
+      :rtype: int
+
+   .. py:property:: slotType
+
+      Function that returns the type of slot arrangement the deck might have.
+
+      :return: The slot arrangement type. This is inidcated in the configuration file. Standard is "SLAS".
+      :rtype: str
+
+   .. py:property:: offsetFrom
+
+      Function that returns which corner or the slot to apply to a labware loaded on it.
+
+      :return: The corner of the slot to apply to the labware. This is inidcated in the configuration file.
+      :rtype: str
+
+   .. py:property:: deck_material
+
+      Function that returns the material that the deck and possible mask are made of.
+
+      :return: The material that the deck is made of, as well as any mask that is applied to it.
+      :rtype: Dict[str, str]
+
+   .. py:property:: safe_z
+
+      Function that returns the movement clearance height of the deck.
+
+      :return: The height at which the pipette can freely move without colliding with
+          labware on the deck.
+      :rtype: float
+
+   .. py:method:: _get_slots()
+
+      Function that creates a dictionary of :class:`Slot` objects from the deck configuration file.
+
+      :return: A dictionary of :class:`Slot` objects, where the key is the slot's index.
+      :rtype: Dict[str, :class:`Slot`]
+
+
+   .. py:method:: load_labware(labware_filename: str, slot: int, path=os.path.join(os.path.dirname(__file__), '..', 'labware', 'labware_definition'), order: str = 'rows')
+
+      Function that loads a labware and associates it with a specific slot on the deck.
+       The slot offset is also applied to the labware asocaite with it.
+
+      :param labware_filename: The name of the labware configuration file.
+      :type labware_filename: str
+      :param slot: The index of the slot to load the labware into.
+      :type slot: int
+      :param path: The path to the labware configuration `.json` files for the labware,
+              defaults to the 'labware_definition/' in the science_jubilee/labware directory.
+      :type path: str, optional
+      :param order: The order in which the labware is arranged on the deck.
+              Can be 'rows' or 'columns', defaults to 'rows'.
+      :type order: str, optional
+      :return: The :class:`Labware` object that has been loaded into the slot.
+      :rtype: :class:`Labware`
+
+
+
