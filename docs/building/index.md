@@ -5,7 +5,7 @@ title: Build Guides
 (build-guides)=
 # Build Guides
 
-To use `science-jubilee`, you'll need to build both the Jubilee motion platform as well as tools to use on the machine.
+To use `science-jubilee`, you'll need to build both the Science Jubilee motion platform as well as tools to use on the machine.
 
 ```{eval-rst}
 .. grid:: 1 2 2 2
@@ -17,7 +17,7 @@ To use `science-jubilee`, you'll need to build both the Jubilee motion platform 
         :class-card: intro-card
         :shadow: md
 
-        To use a Jubilee for laboratory automation, you first need a Jubilee! This guide collates resources to build the Jubilee motion platform.
+        To use a Jubilee for laboratory automation, you first need a Science Jubilee! This guide collates resources to build the Science Jubilee motion platform.
 
         +++
 
@@ -27,7 +27,7 @@ To use `science-jubilee`, you'll need to build both the Jubilee motion platform 
             :color: secondary
             :expand:
 
-            Jubilee Build Resources
+            Science Jubilee Build Resources
 
     .. grid-item-card:: Building Science Jubilee Tools
         :class-card: intro-card
